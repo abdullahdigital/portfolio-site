@@ -1,0 +1,163 @@
+"use client";
+
+import { motion, AnimatePresence } from 'framer-motion';
+import Link from 'next/link';
+import { FaBars, FaTimes, FaArrowUp } from 'react-icons/fa';
+import { useState, useEffect } from 'react';
+import Image from 'next/image';
+import { usePathname } from 'next/navigation'; // Import usePathname
+
+const Navbar = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname(); // Get current pathname
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const navLinks = [
+    { name: 'Home', href: '#home' },
+    { name: 'Skills', href: '#skills' },
+    { name: 'Projects', href: '#projects' },
+    { name: 'Industries', href: '#industries' },
+    { name: 'Certificates', href: '#certificates' },
+    { name: 'Referral', href: '/referral' },
+    { name: 'Contact', href: '#contact' },
+  ];
+
+  const [activeSection, setActiveSection] = useState('hero');
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // if (pathname !== '/') return; // Only track sections on the homepage
+
+      const sections = navLinks.filter(link => link.href.startsWith('#'))
+        .map(link => document.getElementById(link.href.substring(1)))
+        .filter(section => section !== null) as HTMLElement[];
+
+      const scrollY = window.scrollY;
+
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const section = sections[i];
+        if (section.offsetTop <= scrollY + 100) {
+          setActiveSection(section.id);
+          break;
+        }
+      }
+
+      if (window.scrollY > 0) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [pathname, navLinks]); // Re-run effect if pathname changes
+
+  return (
+    <>
+      <motion.nav
+        initial={{ y: -100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ type: 'spring', stiffness: 100, damping: 20, delay: 0.2 }}
+        className={`fixed w-full z-50 transition-all duration-300 py-4 ${isScrolled ? 'bg-gray-900/90 backdrop-blur-lg shadow-xl' : 'bg-gradient-to-r from-gray-800/70 to-gray-900/70 backdrop-blur-lg shadow-lg'}`}
+      >
+        <div className="mx-auto flex justify-between items-center px-4">
+          <Link href="/" className="flex items-center space-x-2">
+            <motion.div
+              whileHover={{ scale: 1.1, rotate: 5 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              <Image src="/img/logo.png" alt="Logo" width={40} height={40} />
+            </motion.div>
+            <span className="text-white text-xl font-semibold">Abdullah</span>
+          </Link>
+
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center space-x-6">
+            {navLinks.map((link, index) => (
+              <motion.div
+                key={link.name}
+                whileHover={{ scale: 1.05, color: "#34D399" }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Link
+                  href={pathname === '/' ? link.href : (link.href.startsWith('#') ? '/' + link.href : link.href)}
+                  className={`relative text-lg transition-colors duration-300 ${pathname === '/' && activeSection === link.href.substring(1) || pathname === link.href ? 'text-emerald-400' : 'text-white hover:text-emerald-400'}`}
+                >
+                  {link.name}
+                  <span className={`absolute left-0 bottom-0 w-full h-0.5 bg-emerald-400 transition-transform duration-300 ease-out ${pathname === '/' && activeSection === link.href.substring(1) || pathname === link.href ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}></span>
+                </Link>
+              </motion.div>
+            ))}
+          </div>
+
+          <div className="md:hidden">
+            <button onClick={toggleMenu} className="text-white text-2xl focus:outline-none">
+              {isOpen ? <FaTimes /> : <FaBars />}
+            </button>
+          </div>
+        </div>
+
+        {/* Mobile Menu */}
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.3 }}
+              className="md:hidden bg-gray-800/90 py-4 mt-2"
+            >
+              <ul className="flex flex-col items-center space-y-4">
+                {navLinks.map((link, index) => (
+                  <motion.li
+                    key={link.name}
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -20 }}
+                    transition={{ duration: 0.3, delay: 0.05 * index }}
+                    className="py-2"
+                  >
+                    <Link
+                      href={pathname === '/' ? link.href : (link.href.startsWith('#') ? '/' + link.href : link.href)}
+                      className={`block text-lg transition-colors duration-300 ${pathname === '/' && activeSection === link.href.substring(1) || pathname === link.href ? 'text-emerald-400' : 'text-white hover:text-emerald-400'}`}
+                      onClick={() => {
+                        setActiveSection(link.href.substring(1));
+                        setIsOpen(false);
+                      }}
+                    >
+                      {link.name}
+                    </Link>
+                  </motion.li>
+                ))}
+              </ul>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </motion.nav>
+
+      <AnimatePresence>
+        {isScrolled && (
+          <motion.button
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 50 }}
+            transition={{ type: 'spring', stiffness: 100, damping: 20 }}
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            className="fixed bottom-8 right-8 bg-emerald-500 text-white p-3 rounded-full shadow-lg hover:bg-emerald-600 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-opacity-75 z-[999]"
+          >
+            <FaArrowUp />
+          </motion.button>
+        )}
+      </AnimatePresence>
+    </>
+  );
+};
+
+export default Navbar;
