@@ -9,7 +9,6 @@ interface Certificate {
   id: string;
   title: string;
   issuer: string;
-  date: string;
   image: string;
   url: string;
 }
@@ -17,42 +16,44 @@ interface Certificate {
 const certificatesData: Certificate[] = [
   {
     id: '1',
-    title: 'Full Stack Web Development',
-    issuer: 'Coursera',
-    date: 'Jan 2023',
-    image: '/images/certificate-fullstack.jpg', // Placeholder image
+    title: 'Full Stack Django Developer',
+    issuer: 'Various Platforms',
+    image: '/cert/fullstackdjangodeveloper1.jpeg',
     url: '#',
   },
   {
     id: '2',
-    title: 'AWS Certified Developer',
-    issuer: 'Amazon Web Services',
-    date: 'Mar 2023',
-    image: '/images/certificate-aws.jpg', // Placeholder image
+    title: 'React',
+    issuer: 'Various Platforms',
+    image: '/cert/react2.jpeg',
     url: '#',
   },
   {
     id: '3',
-    title: 'Machine Learning Specialization',
-    issuer: 'Stanford University',
-    date: 'May 2023',
-    image: '/images/certificate-ml.jpg', // Placeholder image
+    title: 'Wordpress',
+    issuer: 'Various Platforms',
+    image: '/cert/wordpress3.jpg',
     url: '#',
   },
   {
     id: '4',
-    title: 'React Advanced Concepts',
-    issuer: 'Udemy',
-    date: 'Jul 2023',
-    image: '/images/certificate-react.jpg', // Placeholder image
+    title: 'Frontend',
+    issuer: 'Various Platforms',
+    image: '/cert/frontend4.png',
     url: '#',
   },
   {
     id: '5',
-    title: 'DevOps Fundamentals',
-    issuer: 'LinkedIn Learning',
-    date: 'Sep 2023',
-    image: '/images/certificate-devops.jpg', // Placeholder image
+    title: 'Web Dev E-commerce',
+    issuer: 'Various Platforms',
+    image: '/cert/webdevecommerce5.png',
+    url: '#',
+  },
+  {
+    id: '6',
+    title: 'Udemy Web Intro Hacking',
+    issuer: 'Various Platforms',
+    image: '/cert/udemy web intro hacking6.jpg',
     url: '#',
   },
 ];
@@ -60,16 +61,16 @@ const certificatesData: Certificate[] = [
 const CertificateCard: React.FC<{ certificate: Certificate; onClick: () => void }> = ({ certificate, onClick }) => {
   return (
     <motion.div
-      className="flex-none w-full md:w-1/2 lg:w-1/3 p-4 cursor-pointer"
+      className="flex-none w-full md:w-1/2 lg:w-[calc(100%/3)] cursor-pointer flex-shrink-0"
       whileHover={{ scale: 1.03 }}
       whileTap={{ scale: 0.98 }}
       onClick={onClick}
     >
-      <div className="bg-gray-800 rounded-lg shadow-lg overflow-hidden border border-gray-700">
+      <div className="bg-gray-800 rounded-lg shadow-lg overflow-hidden border border-gray-700 p-4">
         <Image src={certificate.image} alt={certificate.title} width={400} height={250} className="w-full h-48 object-cover" />
         <div className="p-4">
           <h3 className="text-xl font-semibold text-white mb-1">{certificate.title}</h3>
-          <p className="text-gray-400 text-sm">{certificate.issuer} - {certificate.date}</p>
+          <p className="text-gray-400 text-sm">{certificate.issuer}</p>
         </div>
       </div>
     </motion.div>
@@ -94,7 +95,7 @@ const CertificateModal: React.FC<{ certificate: Certificate; onClose: () => void
       >
         <button onClick={onClose} className="absolute top-4 right-4 text-white text-2xl">&times;</button>
         <h2 className="text-3xl font-bold text-white mb-4">{certificate.title}</h2>
-        <p className="text-gray-400 mb-4">{certificate.issuer} - {certificate.date}</p>
+        <p className="text-gray-400 mb-4">{certificate.issuer}</p>
         <Image src={certificate.image} alt={certificate.title} width={800} height={500} className="w-full h-auto rounded-lg mb-4" />
         <a
           href={certificate.url}
@@ -158,7 +159,7 @@ const Certificates = () => {
           transition={{ duration: 0.6 }}
         >
           <div className="overflow-hidden" ref={emblaRef}>
-            <div className="flex -ml-4">
+            <div className="flex">
               {certificatesData.map((certificate) => (
                 <CertificateCard key={certificate.id} certificate={certificate} onClick={() => openModal(certificate)} />
               ))}

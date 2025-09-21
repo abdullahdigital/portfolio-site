@@ -17,7 +17,6 @@ export default function Home() {
       <Skills />
       <Industries />
       <Projects />
-      <Industries />
       <Certificates />
       <Contact />
       <Footer />

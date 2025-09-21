@@ -9,10 +9,7 @@ import Footer from '@/components/Footer';
 type Industry = {
   name: string;
   description: string;
-  projects: {
-    title: string;
-    link: string;
-  }[];
+  projects: string[];
 };
 
 export default function IndustriesPage() {
@@ -71,9 +68,7 @@ export default function IndustriesPage() {
                 <ul className="list-disc list-inside text-gray-400">
                   {industry.projects.map((project, projIndex) => (
                     <li key={projIndex}>
-                      <a href={project.link} className="hover:text-emerald-400 transition-colors duration-200">
-                        {project.title}
-                      </a>
+                      {project}
                     </li>
                   ))}
                 </ul>

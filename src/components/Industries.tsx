@@ -1,35 +1,10 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useState } from 'react';
 import { industriesData, Industry } from '@/data/industriesData';
 import Link from 'next/link';
 
-// type Industry = {
-//   name: string;
-//   description: string;
-//   projects: {
-//     title: string;
-//     link: string;
-//   }[];
-// };
-
 export default function Industries() {
-  const [selectedIndustry, setSelectedIndustry] = useState<Industry | null>(null);
-
-  // Remove the local declaration of industriesData
-  // const industriesData: Industry[] = [
-  //   {
-  //     name: 'Cybersecurity',
-  //     description: 'SIEM Dashboards, Threat Detection, Security Monitoring',
-  //     projects: [
-  //       { title: 'Threat Detection System', link: '#projects' },
-  //       { title: 'SIEM Dashboard Integration', link: '#projects' },
-  //     ],
-  //   },
-  //   ...
-  // ];
-
   const homepageIndustries = industriesData.slice(0, 6);
 
   return (
@@ -63,9 +38,7 @@ export default function Industries() {
                 <ul className="list-disc list-inside text-gray-400">
                   {industry.projects.map((project, projIndex) => (
                     <li key={projIndex}>
-                      <a href={project.link} className="hover:text-emerald-400 transition-colors duration-200">
-                        {project.title}
-                      </a>
+                      {project}
                     </li>
                   ))}
                 </ul>

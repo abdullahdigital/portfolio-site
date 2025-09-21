@@ -17,20 +17,20 @@ const FactCard: React.FC<FactCardProps> = ({ title, value, suffix, description }
   const [clickedIndustry, setClickedIndustry] = useState<{ name: string; screenshot: string } | null>(null);
 
   const handleIndustryClick = (url: string) => {
-    if (selectedIndustry) {
-      setClickedIndustry(selectedIndustry);
-    }
-    console.log(`Redirecting to: ${url}`);
-    // window.open(url, '_blank');
+    window.location.href = url; // Navigate to the URL
   };
 
   return (
     <motion.div
-      className="relative bg-gray-800 p-6 rounded-lg shadow-lg border border-gray-700 overflow-hidden"
+      className={`relative bg-gray-800 p-6 rounded-lg shadow-lg border border-gray-700 overflow-hidden ${title === 'Industries Served' || title === 'Projects Completed' ? 'cursor-pointer' : ''}`}
       whileHover={{ scale: 1.05, borderColor: '#10B981' }}
       transition={{ duration: 0.3 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.3 }}
+      onClick={() => {
+        if (title === 'Industries Served') handleIndustryClick('#industries');
+        if (title === 'Projects Completed') handleIndustryClick('#projects');
+      }}
     >
       <h3 className="text-xl font-semibold text-white mb-2">{title}</h3>
       <div className="text-4xl font-bold text-emerald-400 mb-4">
@@ -59,7 +59,7 @@ const Facts = () => {
       title: 'Industries Served',
       value: 12,
       suffix: '+',
-      description: 'Experience in FinTech, E-commerce, Healthcare, and more.',
+      description: 'Experience in SaaS, E-commerce, Healthcare, and more.',
     },
   ];
 

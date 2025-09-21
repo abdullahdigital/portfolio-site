@@ -19,8 +19,8 @@ const Navbar = () => {
   const navLinks = [
     { name: 'Home', href: '#home' },
     { name: 'Skills', href: '#skills' },
-    { name: 'Projects', href: '#projects' },
     { name: 'Industries', href: '#industries' },
+    { name: 'Projects', href: '/projects' }, // Changed to link to the new /projects page
     { name: 'Certificates', href: '#certificates' },
     { name: 'Referral', href: '/referral' },
     { name: 'Contact', href: '#contact' },
@@ -38,13 +38,16 @@ const Navbar = () => {
 
       const scrollY = window.scrollY;
 
-      for (let i = sections.length - 1; i >= 0; i--) {
+      let currentActiveSection = 'hero'; // Default to hero
+      for (let i = 0; i < sections.length; i++) {
         const section = sections[i];
         if (section.offsetTop <= scrollY + 100) {
-          setActiveSection(section.id);
-          break;
+          currentActiveSection = section.id;
+        } else {
+          break; // We've passed the active section
         }
       }
+      setActiveSection(currentActiveSection);
 
       if (window.scrollY > 0) {
         setIsScrolled(true);
@@ -87,7 +90,7 @@ const Navbar = () => {
                 whileTap={{ scale: 0.95 }}
               >
                 <Link
-                  href={pathname === '/' ? link.href : (link.href.startsWith('#') ? '/' + link.href : link.href)}
+                  href={link.href.startsWith('#') ? (pathname === '/' ? link.href : '/' + link.href) : link.href}
                   className={`relative text-lg transition-colors duration-300 ${pathname === '/' && activeSection === link.href.substring(1) || pathname === link.href ? 'text-emerald-400' : 'text-white hover:text-emerald-400'}`}
                 >
                   {link.name}

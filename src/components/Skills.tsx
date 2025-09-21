@@ -22,10 +22,11 @@ const skillsData: SkillProps[] = [
   { name: 'React.js', icon: FaReact, category: 'Frontend' },
   { name: 'Svelte', icon: SiFramer, category: 'Frontend' },
   { name: 'Nginx', icon: SiNginx, category: 'Cloud & Deployment' },
-  { name: 'MongoDB', icon: SiMongodb, category: 'Database' },
+  { name: 'MERN Stack', icon: FaReact, category: 'Full Stack' }, // Replaced MongoDB with MERN Stack
   { name: 'Node.js', icon: FaNodeJs, category: 'Backend' },
   { name: 'Express.js', icon: SiExpress, category: 'Backend' },
   { name: 'Framer Motion', icon: SiFramer, category: 'Animation' },
+  { name: 'MongoDB', icon: SiMongodb, category: 'Database' }, // Added MongoDB back
   { name: 'SQL', icon: DiMsqlServer, category: 'Database' },
   { name: 'AWS', icon: FaAws, category: 'Cloud & Deployment' },
   { name: 'Tailwind CSS', icon: SiTailwindcss, category: 'Animation' },
@@ -49,7 +50,7 @@ const skillsData: SkillProps[] = [
   { name: 'Web Design', icon: FaHtml5, category: 'Frontend' },
   { name: 'Back-End Development', icon: FaNodeJs, category: 'Backend' },
   { name: 'Full Stack Development', icon: FaPython, category: 'Full Stack' },
-  { name: 'MERN Stack', icon: FaReact, category: 'Full Stack' },
+  // { name: 'MERN Stack', icon: FaReact, category: 'Full Stack' }, // Original MERN Stack entry
   { name: 'Django Stack', icon: SiDjango, category: 'Full Stack' },
   { name: 'LAMP Stack', icon: FaHtml5, category: 'Full Stack' },
   { name: 'Apache', icon: SiApache, category: 'Cloud & Deployment' },

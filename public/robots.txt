@@ -1,0 +1,15 @@
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: PerplexityAI
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+# Block random scrapers
+User-agent: *
+Disallow: /

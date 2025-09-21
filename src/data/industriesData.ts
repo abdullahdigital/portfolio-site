@@ -1,115 +1,126 @@
-export type Industry = {
+export interface Industry {
   name: string;
   description: string;
-  projects: {
-    title: string;
-    link: string;
-  }[];
-};
+  projects: string[]; // Array of project titles
+}
 
 export const industriesData: Industry[] = [
   {
-    name: 'Cybersecurity',
-    description: 'SIEM Dashboards, Threat Detection, Security Monitoring',
+    name: "Cybersecurity",
+    description: "Protecting systems and data from cyber threats with robust security solutions.",
     projects: [
-      { title: 'Threat Detection System', link: '#projects' },
-      { title: 'SIEM Dashboard Integration', link: '#projects' },
+      "SIEM Dashboard",
+      "Blog Cyber",
+      "Flask SIEM",
+      "SIEM System",
     ],
   },
   {
-    name: 'E-Commerce',
-    description: 'Online Stores, Payment Integration, Printer Shops, Discord Shops',
+    name: "Personal Branding",
+    description: "Crafting unique online identities and portfolios for individuals and professionals.",
     projects: [
-      { title: 'Online Retail Store', link: '#projects' },
-      { title: 'Payment Gateway Integration', link: '#projects' },
+      "Portfolio Website",
     ],
   },
   {
-    name: 'Healthcare',
-    description: 'Blood Donation & Patient Support Systems',
+    name: "Freelance Platforms",
+    description: "Developing platforms that connect freelancers with clients for various services.",
     projects: [
-      { title: 'Blood Donation App', link: '#projects' },
-      { title: 'Patient Support Portal', link: '#projects' },
+      "Freelance Jobs Platform",
     ],
   },
   {
-    name: 'Freelance Platforms',
-    description: 'Marketplace & Collaboration Tools',
+    name: "Food & Hospitality",
+    description: "Creating engaging web experiences for restaurants, cafes, and hospitality businesses.",
     projects: [
-      { title: 'Freelancer Marketplace', link: '#projects' },
-      { title: 'Collaboration Suite', link: '#projects' },
+      "Restaurant Website",
     ],
   },
   {
-    name: 'Content & Publishing',
-    description: 'Blogs, News Portals',
+    name: "Healthcare (Specialized)",
+    description: "Building specialized digital solutions for the healthcare sector.",
     projects: [
-      { title: 'Dynamic Blog Platform', link: '#projects' },
-      { title: 'News Aggregator', link: '#projects' },
+      "Blood Donation Platform",
     ],
   },
   {
-    name: 'Communication & Collaboration',
-    description: 'Chat Applications, Freelancers’ Support Platforms',
+    name: "Food & Hospitality",
+    description: "Creating engaging web experiences for restaurants, cafes, and hospitality businesses.",
     projects: [
-      { title: 'Real-time Chat App', link: '#projects' },
-      { title: 'Freelance Support System', link: '#projects' },
+      "Restaurant Website",
     ],
   },
   {
-    name: 'Utilities & Tools',
-    description: 'Weather Apps, Text Manipulation, Text-to-Speech Solutions',
+    name: "Healthcare",
+    description: "Developing comprehensive digital solutions for the healthcare industry.",
     projects: [
-      { title: 'Weather Forecast App', link: '#projects' },
-      { title: 'Text Utility Suite', link: '#projects' },
+      "Blood Donation Platform",
     ],
   },
   {
-    name: 'Education & Learning',
-    description: 'Online Academies, Tutorial Platforms',
+    name: "Communication & Collaboration",
+    description: "Building tools that facilitate seamless communication and teamwork.",
     projects: [
-      { title: 'E-Learning Platform', link: '#projects' },
-      { title: 'Interactive Tutorial Site', link: '#projects' },
+      "WhatsApp Clone",
+      "RoboSpeaker",
+      "Text to Speech",
     ],
   },
   {
-    name: 'Food & Hospitality',
-    description: 'Restaurant Websites & Ordering Systems',
+    name: "E-Commerce",
+    description: "Designing and developing online stores and e-commerce platforms.",
     projects: [
-      { title: 'Restaurant Booking System', link: '#projects' },
-      { title: 'Online Ordering Platform', link: '#projects' },
+      "E-commerce Store",
+      "Small E-commerce",
+      "ShopiCore",
     ],
   },
   {
-    name: 'Entertainment & Gaming',
-    description: 'Gaming Platforms & Interactive Apps',
+    name: "Education & Learning",
+    description: "Creating innovative platforms for online education and learning experiences.",
     projects: [
-      { title: 'Gaming Community Portal', link: '#projects' },
-      { title: 'Interactive Quiz App', link: '#projects' },
+      "Australian Academy Project",
     ],
   },
   {
-    name: 'Music & Media',
-    description: 'Streaming & Audio Platforms',
+    name: "Content & Publishing",
+    description: "Developing systems for content creation, management, and distribution.",
     projects: [
-      { title: 'Music Streaming Service', link: '#projects' },
-      { title: 'Podcast Hosting Platform', link: '#projects' },
+      "Blog Advance",
     ],
   },
   {
-    name: 'Personal Branding',
-    description: 'Portfolio Websites, Landing Pages for Startups',
+    name: "Utilities & Tools",
+    description: "Building practical web-based utilities and tools for everyday use.",
     projects: [
-      { title: 'Personal Portfolio Site', link: '#projects' },
-      { title: 'Startup Landing Page', link: '#projects' },
+      "TextUtils",
+      "Weather App",
+      "Printer Repair Website",
     ],
   },
   {
-    name: 'Healthcare (Specialized)',
-    description: 'Dentist Practice Websites',
+    name: "Music & Media",
+    description: "Creating engaging platforms for music streaming and media consumption.",
     projects: [
-      { title: 'Dental Clinic Website', link: '#projects' },
-      { title: 'Appointment Booking System', link: '#projects' },
+      "Music Player",
+    ],
+  },
+  {
+    name: "Entertainment & Gaming",
+    description: "Developing interactive websites and platforms for entertainment and gaming.",
+    projects: [
+      "Gaming Website",
+    ],
+  },
+  {
+    name: "Web Design",
+    description: "Creating visually appealing and user-friendly website designs.",
+    projects: [
+      "Dentist Website",
+      "Coming Soon Page",
+      "Landing Page",
+      "Web Pricing Page",
+      "AI Startup Landing Page",
     ],
   },
 ];
