@@ -12,69 +12,108 @@ import { BsArrowsMove } from "react-icons/bs";
 
 interface SkillProps {
   name: string;
-  icon: React.ElementType;
+  Icon: React.ElementType;
   category: string;
 }
 
 const skillsData: SkillProps[] = [
-  { name: 'Next.js', icon: SiNextdotjs, category: 'Frontend' },
-  { name: 'Django', icon: SiDjango, category: 'Backend' },
-  { name: 'React.js', icon: FaReact, category: 'Frontend' },
-  { name: 'Svelte', icon: SiFramer, category: 'Frontend' },
-  { name: 'Nginx', icon: SiNginx, category: 'Cloud & Deployment' },
-  { name: 'MERN Stack', icon: FaReact, category: 'Full Stack' }, // Replaced MongoDB with MERN Stack
-  { name: 'Node.js', icon: FaNodeJs, category: 'Backend' },
-  { name: 'Express.js', icon: SiExpress, category: 'Backend' },
-  { name: 'Framer Motion', icon: SiFramer, category: 'Animation' },
-  { name: 'MongoDB', icon: SiMongodb, category: 'Database' }, // Added MongoDB back
-  { name: 'SQL', icon: DiMsqlServer, category: 'Database' },
-  { name: 'AWS', icon: FaAws, category: 'Cloud & Deployment' },
-  { name: 'Tailwind CSS', icon: SiTailwindcss, category: 'Animation' },
-  { name: 'PostgreSQL', icon: SiPostgresql, category: 'Database' },
-  { name: 'Git', icon: FaGitAlt, category: 'Version Control' },
-  { name: 'GitHub', icon: FaGithub, category: 'Version Control' },
-  { name: 'Django REST Framework', icon: SiDjango, category: 'Backend' },
-  { name: 'Flask', icon: SiFlask, category: 'Backend' },
-  { name: 'FastAPI', icon: SiFastapi, category: 'Backend' },
-  { name: 'Laravel', icon: SiLaravel, category: 'Backend' },
-  { name: 'PHP', icon: SiPhp, category: 'Language' },
-  { name: 'Python', icon: FaPython, category: 'Language' },
-  { name: 'JavaScript', icon: FaNodeJs, category: 'Language' },
-  { name: 'TypeScript', icon: SiTypescript, category: 'Language' },
-  { name: 'jQuery', icon: SiJquery, category: 'Frontend' },
-  { name: 'HTML5', icon: FaHtml5, category: 'Frontend' },
-  { name: 'CSS3', icon: FaCss3Alt, category: 'Animation' },
-  { name: 'Bootstrap', icon: FaBootstrap, category: 'Frontend' },
-  { name: 'Responsive Web Design', icon: BsArrowsMove, category: 'Frontend' },
-  { name: 'Front-End Design', icon: FaReact, category: 'Frontend' },
-  { name: 'Web Design', icon: FaHtml5, category: 'Frontend' },
-  { name: 'Back-End Development', icon: FaNodeJs, category: 'Backend' },
-  { name: 'Full Stack Development', icon: FaPython, category: 'Full Stack' },
-  // { name: 'MERN Stack', icon: FaReact, category: 'Full Stack' }, // Original MERN Stack entry
-  { name: 'Django Stack', icon: SiDjango, category: 'Full Stack' },
-  { name: 'LAMP Stack', icon: FaHtml5, category: 'Full Stack' },
-  { name: 'Apache', icon: SiApache, category: 'Cloud & Deployment' },
-  { name: 'Docker', icon: SiDocker, category: 'Cloud & Deployment' },
-  { name: 'Shadcn/UI', icon: FaReact, category: 'Animation' },
-  { name: 'REST APIs', icon: TbApi, category: 'Backend' },
-  { name: 'API Testing', icon: MdSecurity, category: 'Security' },
-  { name: 'Authentication', icon: MdSecurity, category: 'Security' },
-  { name: 'WebSockets', icon: BsArrowsMove, category: 'Backend' },
-  { name: 'SQLite', icon: SiSqlite, category: 'Database' },
-  { name: 'MySQL', icon: SiMysql, category: 'Database' },
-  { name: 'Elasticsearch', icon: SiElasticsearch, category: 'Database' },
-  { name: 'OWASP Top 10', icon: MdSecurity, category: 'Security' },
-  { name: 'SQL Injection', icon: MdSecurity, category: 'Security' },
-  { name: 'Cross-Site Scripting (XSS)', icon: MdSecurity, category: 'Security' },
-  { name: 'Broken Authentication', icon: MdSecurity, category: 'Security' },
-  { name: 'Insecure Design', icon: MdSecurity, category: 'Security' },
-  { name: 'Security Misconfiguration', icon: MdSecurity, category: 'Security' },
-  { name: 'Vulnerable & Outdated Components', icon: MdSecurity, category: 'Security' },
-  { name: 'Identification & Authentication Failures', icon: MdSecurity, category: 'Security' },
-  { name: 'Software & Data Integrity Failures', icon: MdSecurity, category: 'Security' },
-  { name: 'Server-Side Request Forgery (SSRF)', icon: MdSecurity, category: 'Security' },
-  { name: 'Access Control Failures', icon: MdSecurity, category: 'Security' },
+  { name: 'Next.js', Icon: SiNextdotjs, category: 'Frontend' },
+  { name: 'Django', Icon: SiDjango, category: 'Backend' },
+  { name: 'React.js', Icon: FaReact, category: 'Frontend' },
+  { name: 'Svelte', Icon: SiFramer, category: 'Frontend' },
+  { name: 'Nginx', Icon: SiNginx, category: 'Cloud & Deployment' },
+  { name: 'MERN Stack', Icon: FaReact, category: 'Full Stack' }, // Replaced MongoDB with MERN Stack
+  { name: 'PERN Stack', Icon: SiPostgresql, category: 'Full Stack' },
+  { name: 'Node.js', Icon: FaNodeJs, category: 'Backend' },
+  { name: 'Express.js', Icon: SiExpress, category: 'Backend' },
+  { name: 'Framer Motion', Icon: SiFramer, category: 'Animation' },
+  { name: 'MongoDB', Icon: SiMongodb, category: 'Database' }, // Added MongoDB back
+  { name: 'SQL', Icon: DiMsqlServer, category: 'Database' },
+  { name: 'AWS', Icon: FaAws, category: 'Cloud & Deployment' },
+  { name: 'Tailwind CSS', Icon: SiTailwindcss, category: 'Animation' },
+  { name: 'PostgreSQL', Icon: SiPostgresql, category: 'Database' },
+  { name: 'Git', Icon: FaGitAlt, category: 'Version Control' },
+  { name: 'GitHub', Icon: FaGithub, category: 'Version Control' },
+  { name: 'Django REST Framework', Icon: SiDjango, category: 'Backend' },
+  { name: 'Flask', Icon: SiFlask, category: 'Backend' },
+  { name: 'FastAPI', Icon: SiFastapi, category: 'Backend' },
+  { name: 'Laravel', Icon: SiLaravel, category: 'Backend' },
+  { name: 'PHP', Icon: SiPhp, category: 'Language' },
+  { name: 'Python', Icon: FaPython, category: 'Language' },
+  { name: 'JavaScript', Icon: FaNodeJs, category: 'Language' },
+  { name: 'TypeScript', Icon: SiTypescript, category: 'Language' },
+  { name: 'jQuery', Icon: SiJquery, category: 'Frontend' },
+  { name: 'HTML5', Icon: FaHtml5, category: 'Frontend' },
+  { name: 'CSS3', Icon: FaCss3Alt, category: 'Animation' },
+  { name: 'Bootstrap', Icon: FaBootstrap, category: 'Frontend' },
+  { name: 'Responsive Web Design', Icon: BsArrowsMove, category: 'Frontend' },
+  { name: 'Front-End Design', Icon: FaReact, category: 'Frontend' },
+  { name: 'Web Design', Icon: FaHtml5, category: 'Frontend' },
+  { name: 'Back-End Development', Icon: FaNodeJs, category: 'Backend' },
+  { name: 'Full Stack Development', Icon: FaPython, category: 'Full Stack' },
+  // { name: 'MERN Stack', Icon: FaReact, category: 'Full Stack' }, // Original MERN Stack entry
+  { name: 'Django Stack', Icon: SiDjango, category: 'Full Stack' },
+  { name: 'LAMP Stack', Icon: FaHtml5, category: 'Full Stack' },
+  { name: 'Apache', Icon: SiApache, category: 'Cloud & Deployment' },
+  { name: 'Docker', Icon: SiDocker, category: 'Cloud & Deployment' },
+  { name: 'Shadcn/UI', Icon: FaReact, category: 'Animation' },
+  { name: 'REST APIs', Icon: TbApi, category: 'Backend' },
+  { name: 'API Testing', Icon: MdSecurity, category: 'Security' },
+  { name: 'Authentication', Icon: MdSecurity, category: 'Security' },
+  { name: 'WebSockets', Icon: BsArrowsMove, category: 'Backend' },
+  { name: 'SQLite', Icon: SiSqlite, category: 'Database' },
+  { name: 'MySQL', Icon: SiMysql, category: 'Database' },
+  { name: 'Elasticsearch', Icon: SiElasticsearch, category: 'Database' },
+  { name: 'OWASP Top 10', Icon: MdSecurity, category: 'Security' },
+  { name: 'SQL Injection', Icon: MdSecurity, category: 'Security' },
+  { name: 'Cross-Site Scripting (XSS)', Icon: MdSecurity, category: 'Security' },
+  { name: 'Broken Authentication', Icon: MdSecurity, category: 'Security' },
+  { name: 'Insecure Design', Icon: MdSecurity, category: 'Security' },
+  { name: 'Security Misconfiguration', Icon: MdSecurity, category: 'Security' },
+  { name: 'Vulnerable & Outdated Components', Icon: MdSecurity, category: 'Security' },
+  { name: 'Identification & Authentication Failures', Icon: MdSecurity, category: 'Security' },
+  { name: 'Software & Data Integrity Failures', Icon: MdSecurity, category: 'Security' },
+  { name: 'Server-Side Request Forgery (SSRF)', Icon: MdSecurity, category: 'Security' },
+  { name: 'Access Control Failures', Icon: MdSecurity, category: 'Security' },
 ];
+
+const SkillCard: React.FC<SkillProps> = ({ name, Icon, category }) => {
+  const [hovered, setHovered] = useState(false);
+
+  return (
+    <motion.div
+      className={`relative bg-gray-800 p-6 rounded-lg shadow-lg border border-gray-700 overflow-hidden
+        ${hovered ? 'hover-effect' : ''}
+      `}
+      onHoverStart={() => setHovered(true)}
+      onHoverEnd={() => setHovered(false)}
+      whileHover={{ scale: 1.05, borderColor: '#10B981' }}
+      transition={{ duration: 0.3 }}
+      style={{
+        position: 'relative',
+        zIndex: 1,
+        overflow: 'hidden',
+      }}
+    >
+      {hovered && (
+        <motion.div
+          className="absolute inset-0 rounded-lg"
+          initial={{ background: 'radial-gradient(circle at center, rgba(16, 185, 129, 0.2) 0%, rgba(16, 185, 129, 0) 0%)' }}
+          animate={{ background: 'radial-gradient(circle at center, rgba(16, 185, 129, 0.2) 50%, rgba(16, 185, 129, 0) 100%)' }}
+          transition={{ duration: 0.5, ease: 'easeOut' }}
+          style={{ zIndex: -1 }}
+        />
+      )}
+      <div className="relative z-10 flex flex-col items-center">
+        <div className="text-4xl text-emerald-400 mb-4">
+          {<Icon />}
+        </div>
+        <h3 className="text-xl font-semibold text-white mb-2">{name}</h3>
+        <p className="text-gray-400 text-center">{category}</p>
+      </div>
+    </motion.div>
+  );
+};
 
 const Skills = () => {
   const [displayMode, setDisplayMode] = useState<'top6' | string>('top6');
@@ -142,19 +181,7 @@ const Skills = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {skillsToDisplay.map((skill, index) => (
-            <motion.div
-              key={index}
-              className="relative bg-gray-800 p-6 rounded-lg shadow-lg border border-gray-700 flex flex-col items-center justify-center"
-              whileHover={{ scale: 1.05, borderColor: '#10B981', boxShadow: '0 0 20px rgba(16, 185, 129, 0.6)' }}
-              transition={{ duration: 0.3 }}
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true, amount: 0.3 }}
-            >
-              <div className="text-5xl mb-4"><skill.icon /></div>
-              <h3 className="text-xl font-semibold text-white">{skill.name}</h3>
-              <p className="text-gray-400 text-sm">{skill.category}</p>
-            </motion.div>
+            <SkillCard key={index} name={skill.name} Icon={skill.Icon} category={skill.category} />
           ))}
         </div>
         <motion.div

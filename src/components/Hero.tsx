@@ -3,8 +3,10 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { TypeAnimation } from 'react-type-animation';
+import { useRouter } from 'next/navigation';
 
 const Hero = () => {
+  const router = useRouter(); // Initialize useRouter
   const buttonVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
@@ -66,10 +68,11 @@ const Hero = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="mt-6 mx-auto px-6 py-2 bg-emerald-600 text-white text-base font-semibold rounded-full shadow-lg hover:bg-emerald-700 transition duration-300"
+              className="mt-6 mx-auto px-6 py-2 bg-emerald-600 text-white text-base font-semibold rounded-lg shadow-lg hover:bg-emerald-700 transition duration-300"
               variants={buttonVariants}
               initial="hidden"
               animate="visible"
+              onClick={() => router.push('#contact')}
             >
               Hire Me
             </motion.button>

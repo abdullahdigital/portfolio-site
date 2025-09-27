@@ -87,7 +87,7 @@ const Contact = () => {
           </div>
           <motion.button
             type="submit"
-            className="w-full bg-emerald-500 text-white py-3 rounded-md font-semibold text-lg hover:bg-emerald-600 transition-colors duration-300"
+            className="w-full bg-emerald-500 text-white py-3 rounded-lg font-semibold text-lg hover:bg-emerald-600 transition-colors duration-300"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             disabled={isSubmitting}

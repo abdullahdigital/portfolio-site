@@ -89,19 +89,41 @@ const SkillsPage = () => {
     return skill.category === activeCategory;
   });
 
-  const SkillCard = ({ skill }: { skill: Skill }) => (
-    <motion.div
-      className="bg-gray-800 rounded-lg p-6 flex flex-col items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-700"
-      initial={{ opacity: 0, scale: 0.8 }}
-      animate={{ opacity: 1, scale: 1 }}
-      exit={{ opacity: 0, scale: 0.8 }}
-      transition={{ duration: 0.3 }}
-    >
-      <skill.icon className="text-emerald-400 text-5xl mb-4" />
-      <h3 className="text-white text-xl font-semibold text-center mb-2">{skill.name}</h3>
-      <p className="text-gray-400 text-sm text-center">{skill.category}</p>
-    </motion.div>
-  );
+  const SkillCard = ({ skill }: { skill: Skill }) => {
+    const [hovered, setHovered] = useState(false);
+  
+    return (
+      <motion.div
+        className={`relative bg-gray-800 p-6 rounded-lg shadow-lg border border-gray-700 overflow-hidden
+          ${hovered ? 'hover-effect' : ''}
+        `}
+        onHoverStart={() => setHovered(true)}
+        onHoverEnd={() => setHovered(false)}
+        whileHover={{ scale: 1.05, borderColor: '#10B981' }}
+        transition={{ duration: 0.3 }}
+        style={{
+          position: 'relative',
+          zIndex: 1,
+          overflow: 'hidden',
+        }}
+      >
+        {hovered && (
+          <motion.div
+            className="absolute inset-0 rounded-lg"
+            initial={{ background: 'radial-gradient(circle at center, rgba(16, 185, 129, 0.2) 0%, rgba(16, 185, 129, 0) 0%)' }}
+            animate={{ background: 'radial-gradient(circle at center, rgba(16, 185, 129, 0.2) 50%, rgba(16, 185, 129, 0) 100%)' }}
+            transition={{ duration: 0.5, ease: 'easeOut' }}
+            style={{ zIndex: -1 }}
+          />
+        )}
+        <div className="relative z-10 flex flex-col items-center">
+          <skill.icon className="text-emerald-400 text-5xl mb-4" />
+          <h3 className="text-white text-xl font-semibold text-center mb-2">{skill.name}</h3>
+          <p className="text-gray-400 text-sm text-center">{skill.category}</p>
+        </div>
+      </motion.div>
+    );
+  };
 
   return (
     <div className="min-h-screen bg-gray-900 text-white flex flex-col">

@@ -15,13 +15,6 @@ interface Certificate {
 
 const certificatesData: Certificate[] = [
   {
-    id: '1',
-    title: 'Full Stack Django Developer',
-    issuer: 'Various Platforms',
-    image: '/cert/fullstackdjangodeveloper1.jpeg',
-    url: '#',
-  },
-  {
     id: '2',
     title: 'React',
     issuer: 'Various Platforms',
@@ -29,10 +22,24 @@ const certificatesData: Certificate[] = [
     url: '#',
   },
   {
+    id: '1',
+    title: 'Full Stack Django Developer',
+    issuer: 'Various Platforms',
+    image: '/cert/fullstackdjangodeveloper1.jpeg',
+    url: '#',
+  },
+  {
     id: '3',
     title: 'Wordpress',
     issuer: 'Various Platforms',
     image: '/cert/wordpress3.jpg',
+    url: '#',
+  },
+  {
+    id: '6',
+    title: 'Udemy Web Intro Hacking',
+    issuer: 'Various Platforms',
+    image: '/cert/udemy-web-intro-hacking6.jpg',
     url: '#',
   },
   {
@@ -49,30 +56,37 @@ const certificatesData: Certificate[] = [
     image: '/cert/webdevecommerce5.png',
     url: '#',
   },
-  {
-    id: '6',
-    title: 'Udemy Web Intro Hacking',
-    issuer: 'Various Platforms',
-    image: '/cert/udemy web intro hacking6.jpg',
-    url: '#',
-  },
 ];
 
 const CertificateCard: React.FC<{ certificate: Certificate; onClick: () => void }> = ({ certificate, onClick }) => {
   return (
     <motion.div
       className="flex-none w-full md:w-1/2 lg:w-[calc(100%/3)] cursor-pointer flex-shrink-0"
-      whileHover={{ scale: 1.03 }}
-      whileTap={{ scale: 0.98 }}
       onClick={onClick}
     >
-      <div className="bg-gray-800 rounded-lg shadow-lg overflow-hidden border border-gray-700 p-4">
-        <Image src={certificate.image} alt={certificate.title} width={400} height={250} className="w-full h-48 object-cover" />
+      <motion.div
+        className="bg-gray-800 rounded-lg shadow-lg overflow-hidden border border-gray-700 p-4 relative z-10"
+        whileHover={{
+          scale: 1.03,
+          transition: { duration: 0.2 }
+        }}
+        whileTap={{ scale: 0.98 }}
+      >
+        <div className="relative">
+          <Image 
+            src={certificate.image} 
+            alt={certificate.title} 
+            width={400} 
+            height={250} 
+            className="w-full h-48 object-cover rounded-lg"
+            priority={true}
+          />
+        </div>
         <div className="p-4">
           <h3 className="text-xl font-semibold text-white mb-1">{certificate.title}</h3>
           <p className="text-gray-400 text-sm">{certificate.issuer}</p>
         </div>
-      </div>
+      </motion.div>
     </motion.div>
   );
 };
@@ -91,12 +105,19 @@ const CertificateModal: React.FC<{ certificate: Certificate; onClose: () => void
         animate={{ y: 0, opacity: 1 }}
         exit={{ y: -50, opacity: 0 }}
         className="bg-gray-900 rounded-lg shadow-xl max-w-3xl w-full mx-auto p-6 relative"
-        onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside modal
+        onClick={(e) => e.stopPropagation()}
       >
         <button onClick={onClose} className="absolute top-4 right-4 text-white text-2xl">&times;</button>
         <h2 className="text-3xl font-bold text-white mb-4">{certificate.title}</h2>
         <p className="text-gray-400 mb-4">{certificate.issuer}</p>
-        <Image src={certificate.image} alt={certificate.title} width={800} height={500} className="w-full h-auto rounded-lg mb-4" />
+        <Image 
+          src={certificate.image} 
+          alt={certificate.title} 
+          width={800} 
+          height={500} 
+          className="w-full h-auto rounded-lg mb-4"
+          priority={true}
+        />
         <a
           href={certificate.url}
           target="_blank"
@@ -139,7 +160,7 @@ const Certificates = () => {
   };
 
   return (
-    <section id="certificates" className="py-20 bg-slate-900 px-4"> {/* Added id for navigation */}
+    <section id="certificates" className="py-20 bg-slate-900 px-4 relative">
       <div className="w-full text-center">
         <motion.h2
           className="text-4xl font-bold text-emerald-500 mb-12"
@@ -167,13 +188,13 @@ const Certificates = () => {
           </div>
 
           <button
-            className="absolute top-1/2 left-0 -translate-y-1/2 bg-gray-700 text-white p-2 rounded-full shadow-md hover:bg-gray-600 transition-colors"
+            className="absolute top-1/2 left-0 -translate-y-1/2 bg-gray-700 text-white p-2 rounded-full shadow-md hover:bg-gray-600 transition-colors z-20"
             onClick={scrollPrev}
           >
             &#10094;
           </button>
           <button
-            className="absolute top-1/2 right-0 -translate-y-1/2 bg-gray-700 text-white p-2 rounded-full shadow-md hover:bg-gray-600 transition-colors"
+            className="absolute top-1/2 right-0 -translate-y-1/2 bg-gray-700 text-white p-2 rounded-full shadow-md hover:bg-gray-600 transition-colors z-20"
             onClick={scrollNext}
           >
             &#10095;

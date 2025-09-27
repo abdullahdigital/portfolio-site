@@ -29,6 +29,8 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, im
         <div className="p-6 flex flex-col flex-grow">
           <h3 className="text-2xl font-bold text-white mb-2">{title}</h3>
           <p className="text-slate-300 text-base mb-4 flex-grow">{description}</p>
+          {/* Removed tags section as per user request */}
+          {/*
           <div className="flex flex-wrap gap-2 mb-4">
             {tags.map((tag, index) => (
               <span
@@ -39,11 +41,12 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, im
               </span>
             ))}
           </div>
+          */}
           <a
             href={link}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-2 px-4 rounded-md transition duration-300 ease-in-out mt-auto"
+            className="block mx-auto bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-2 px-4 rounded-lg transition duration-300 ease-in-out mt-auto"
           >
             View Project
           </a>
@@ -91,7 +94,7 @@ const Projects = () => {
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.5, delay: featuredProjects.length * 0.1 }}
         >
-          All Projects
+          All Projects ({projectsData.length}+)
         </motion.a>
       </div>
     </section>

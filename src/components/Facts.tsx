@@ -13,25 +13,38 @@ interface FactCardProps {
 
 const FactCard: React.FC<FactCardProps> = ({ title, value, suffix, description }) => {
   const [hovered, setHovered] = useState(false);
-  const [selectedIndustry, setSelectedIndustry] = useState<{ name: string; screenshot: string } | null>(null);
-  const [clickedIndustry, setClickedIndustry] = useState<{ name: string; screenshot: string } | null>(null);
-
-  const handleIndustryClick = (url: string) => {
-    window.location.href = url; // Navigate to the URL
-  };
 
   return (
     <motion.div
-      className={`relative bg-gray-800 p-6 rounded-lg shadow-lg border border-gray-700 overflow-hidden ${title === 'Industries Served' || title === 'Projects Completed' ? 'cursor-pointer' : ''}`}
+      className={`relative bg-gray-800 p-6 rounded-lg shadow-lg border border-gray-700 overflow-hidden
+        ${title === 'Industries Served' || title === 'Projects Completed' ? 'cursor-pointer' : ''}
+        ${hovered ? 'hover-effect' : ''}
+      `}
+      onHoverStart={() => setHovered(true)}
+      onHoverEnd={() => setHovered(false)}
       whileHover={{ scale: 1.05, borderColor: '#10B981' }}
       transition={{ duration: 0.3 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.3 }}
       onClick={() => {
-        if (title === 'Industries Served') handleIndustryClick('#industries');
-        if (title === 'Projects Completed') handleIndustryClick('#projects');
+        if (title === 'Industries Served') window.location.href = '#industries';
+        if (title === 'Projects Completed') window.location.href = '#projects';
+      }}
+      style={{
+        position: 'relative',
+        zIndex: 1,
+        overflow: 'hidden',
       }}
     >
+      {hovered && (
+        <motion.div
+          className="absolute inset-0 rounded-lg"
+          initial={{ background: 'radial-gradient(circle at center, rgba(16, 185, 129, 0.2) 0%, rgba(16, 185, 129, 0) 0%)' }}
+          animate={{ background: 'radial-gradient(circle at center, rgba(16, 185, 129, 0.2) 50%, rgba(16, 185, 129, 0) 100%)' }}
+          transition={{ duration: 0.5, ease: 'easeOut' }}
+          style={{ zIndex: -1 }}
+        />
+      )}
       <h3 className="text-xl font-semibold text-white mb-2">{title}</h3>
       <div className="text-4xl font-bold text-emerald-400 mb-4">
         <CountUp end={value} duration={2.5} enableScrollSpy scrollSpyOnce />{suffix}

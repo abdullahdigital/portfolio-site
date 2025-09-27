@@ -20,7 +20,7 @@ const Navbar = () => {
     { name: 'Home', href: '#home' },
     { name: 'Skills', href: '#skills' },
     { name: 'Industries', href: '#industries' },
-    { name: 'Projects', href: '/projects' }, // Changed to link to the new /projects page
+    { name: 'Projects', href: '#projects' }, // Changed to an anchor link
     { name: 'Certificates', href: '#certificates' },
     { name: 'Referral', href: '/referral' },
     { name: 'Contact', href: '#contact' },

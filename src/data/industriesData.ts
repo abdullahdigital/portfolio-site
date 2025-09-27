@@ -37,6 +37,13 @@ export const industriesData: Industry[] = [
     ],
   },
   {
+    name: "Healthcare",
+    description: "Developing comprehensive digital solutions for the healthcare industry.",
+    projects: [
+      "Blood Donation Platform",
+    ],
+  },
+  {
     name: "Healthcare (Specialized)",
     description: "Building specialized digital solutions for the healthcare sector.",
     projects: [
