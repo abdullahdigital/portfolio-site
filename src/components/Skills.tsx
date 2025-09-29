@@ -134,14 +134,14 @@ const Skills = () => {
     <section id="skills" className="py-10 bg-slate-900 px-4"> {/* Added id for navigation */}
       <div className="w-full text-center">
         <motion.h2
-          className="text-4xl font-bold text-emerald-500 mb-12"
-          initial={{ opacity: 0, y: -50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.5 }}
-          transition={{ duration: 0.5 }}
-        >
-          My Skills
-        </motion.h2>
+            className="text-4xl font-bold text-emerald-500 mb-12"
+            initial={{ opacity: 0, y: -50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.5 }}
+          >
+            My Full-Stack Development Skills
+          </motion.h2>
 
         <motion.div
           className="mb-12 flex flex-wrap justify-center gap-3"

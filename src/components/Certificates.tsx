@@ -75,7 +75,7 @@ const CertificateCard: React.FC<{ certificate: Certificate; onClick: () => void 
         <div className="relative">
           <Image 
             src={certificate.image} 
-            alt={certificate.title} 
+            alt={`${certificate.title} Certificate`} 
             width={400} 
             height={250} 
             className="w-full h-48 object-cover rounded-lg"
@@ -112,7 +112,7 @@ const CertificateModal: React.FC<{ certificate: Certificate; onClose: () => void
         <p className="text-gray-400 mb-4">{certificate.issuer}</p>
         <Image 
           src={certificate.image} 
-          alt={certificate.title} 
+          alt={`${certificate.title} Certificate`} 
           width={800} 
           height={500} 
           className="w-full h-auto rounded-lg mb-4"

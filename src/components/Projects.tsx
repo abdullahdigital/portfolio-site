@@ -20,7 +20,9 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, im
         <div className="relative w-full h-48 overflow-hidden">
           <Image
             src={image}
-            alt={title}
+            alt={`${
+            title
+          } - Portfolio Project`}
             layout="fill"
             objectFit="cover"
             className="rounded-t-lg"
@@ -69,7 +71,7 @@ const Projects = () => {
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.5 }}
         >
-          Featured Projects
+          My Portfolio: Featured Full-Stack Development Projects
         </motion.h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {featuredProjects.map((project: ProjectCardProps, index: number) => (

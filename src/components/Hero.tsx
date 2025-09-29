@@ -97,7 +97,7 @@ const Hero = () => {
           >
             <Image
               src="/img/my pic.jpeg" // Updated to use the correct image path
-              alt="Abdullah"
+              alt="Abdullah - Full-Stack Developer, UI/UX Enthusiast, and Problem Solver"
               layout="fill"
               objectFit="cover"
               className="rounded-full"

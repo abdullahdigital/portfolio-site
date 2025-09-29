@@ -9,7 +9,3 @@ Allow: /
 
 User-agent: GPTBot
 Allow: /
-
-# Block random scrapers
-User-agent: *
-Disallow: /

@@ -145,7 +145,7 @@ const Contact: React.FC = () => {
           transition={{ duration: 0.8 }}
           className="text-4xl font-extrabold text-center mb-12 text-emerald-400"
         >
-          Let’s Connect
+          Contact Abdullah: Let's Build Something Great Together
         </motion.h2>
 
         <div className="flex flex-col lg:flex-row items-start justify-center lg:space-x-16">
