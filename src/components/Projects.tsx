@@ -60,7 +60,7 @@ const Projects = () => {
   const featuredProjects = projectsData.slice(0, 6);
 
   return (
-    <section id="projects" className="py-20 bg-slate-950 px-4">
+    <section id="projects" className="py-12 bg-slate-950 px-4">
       <div className="max-w-6xl mx-auto w-full text-center">
         <motion.h2
           className="text-4xl font-bold text-emerald-500 mb-12"

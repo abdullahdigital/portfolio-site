@@ -53,7 +53,9 @@ const Hero = () => {
                 1000,
                 'A UI/UX Enthusiast',
                 1000,
-                'A Lifelong Learner',
+                'A Problem Solver',
+                1000,
+                'Builder of Secure & Scalable Apps',
                 1000,
               ]}
               wrapper="span"
@@ -63,7 +65,7 @@ const Hero = () => {
             />
           </h1>
           <p className="mt-3 text-base text-gray-300">
-            Crafting seamless web experiences with a passion for innovation.
+              I design, build, and secure modern web apps — blending creativity with clean, scalable code.
           </p>
             <motion.button
               whileHover={{ scale: 1.05 }}

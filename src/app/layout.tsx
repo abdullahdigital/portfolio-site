@@ -6,7 +6,7 @@ import NextNProgress from 'nextjs-toploader';
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "My Portfolio",
+  title: "Abdullah's Portfolio",
   description: "A personal portfolio website showcasing my skills and projects.",
 };
 

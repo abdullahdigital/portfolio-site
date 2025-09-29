@@ -17,10 +17,10 @@ const Navbar = () => {
   };
 
   const navLinks = [
-    { name: 'Home', href: '#home' },
+    { name: 'Home', href: '#hero' },
     { name: 'Skills', href: '#skills' },
     { name: 'Industries', href: '#industries' },
-    { name: 'Projects', href: '#projects' }, // Changed to an anchor link
+    { name: 'Projects', href: '#projects' },
     { name: 'Certificates', href: '#certificates' },
     { name: 'Referral', href: '/referral' },
     { name: 'Contact', href: '#contact' },
@@ -67,7 +67,7 @@ const Navbar = () => {
       <motion.nav
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ type: 'spring', stiffness: 100, damping: 20, delay: 0.2 }}
+        transition={{ type: 'spring', stiffness: 150, damping: 15, delay: 0.1 }}
         className={`fixed w-full z-50 transition-all duration-300 py-4 ${isScrolled ? 'bg-gray-900/90 backdrop-blur-lg shadow-xl' : 'bg-gradient-to-r from-gray-800/70 to-gray-900/70 backdrop-blur-lg shadow-lg'}`}
       >
         <div className="mx-auto flex justify-between items-center px-4">

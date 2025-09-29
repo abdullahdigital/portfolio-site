@@ -60,19 +60,19 @@ const Facts = () => {
       title: 'Years Experience',
       value: 3,
       suffix: '+',
-      description: 'Building and deploying robust web applications.',
+      description: 'Mastering web development, delivering impactful digital solutions.',
     },
     {
       title: 'Projects Completed',
       value: 45,
       suffix: '+',
-      description: 'Delivering high-quality solutions across various domains.',
+      description: 'Transforming ideas into stunning, functional web experiences.',
     },
     {
       title: 'Industries Served',
       value: 12,
       suffix: '+',
-      description: 'Experience in SaaS, E-commerce, Healthcare, and more.',
+      description: 'Driving innovation across diverse sectors with tailored web solutions.',
     },
   ];
 

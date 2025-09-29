@@ -32,7 +32,7 @@ const ProjectsPage = () => {
       <Navbar />
       <main className="flex-grow container mx-auto px-4 py-24">
         <motion.h2
-          className="text-4xl font-bold text-emerald-500 mb-12 text-center"
+          className="text-4xl font-bold text-emerald-500 mb-8 text-center"
           initial={{ opacity: 0, y: -50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.5 }}
@@ -55,13 +55,13 @@ const ProjectsPage = () => {
         </div>
 
         <div className="mb-8 text-center">
-          <input
-            type="text"
-            placeholder="Search projects..."
-            className="p-3 rounded-lg bg-slate-800 text-white border border-slate-700 w-full md:w-1/2 lg:w-1/3"
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-          />
+           <input 
+             type="text" 
+             placeholder="Search projects..." 
+             className="p-3 rounded-lg bg-slate-800 text-white border border-slate-700 w-3/4 md:w-1/2 lg:w-1/3" 
+             value={searchTerm} 
+             onChange={(e) => setSearchTerm(e.target.value)} 
+           /> 
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

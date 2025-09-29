@@ -1,133 +1,107 @@
 export interface Industry {
   name: string;
   description: string;
-  projects: string[]; // Array of project titles
+  projects: { title: string; link: string }[]; // Array of project titles and links
 }
 
 export const industriesData: Industry[] = [
   {
-    name: "Cybersecurity",
-    description: "Protecting systems and data from cyber threats with robust security solutions.",
+    name: 'Cybersecurity',
+    description: 'Securing businesses against modern digital threats.',
     projects: [
-      "SIEM Dashboard",
-      "Blog Cyber",
-      "Flask SIEM",
-      "SIEM System",
+      { title: 'SIEM Dashboard', link: 'https://siem-nimbus.vercel.app/' },
+      { title: 'Flask SIEM', link: 'https://www.linkedin.com/posts/abdullahdigital_websitedevelopment-flaskdeveloper-businesswebsite-activity-7231896232263065600-0k5A?utm_source=share&utm_medium=member_desktop&rcm=ACoAAESxBI8BxvPwjujJf4hh5F_riANWHXN8Vt8' },
+      { title: 'SIEM System', link: 'https://www.linkedin.com/posts/abdullahdigital_webdevelopment-techinnovation-projectshowcase-activity-7232974479205826560-lZEZ?utm_source=share&utm_medium=member_desktop&rcm=ACoAAESxBI8BxvPwjujJf4hh5F_riANWHXN8Vt8' },
+      { title: 'Cybersecurity Blog', link: 'https://www.linkedin.com/posts/abdullahdigital_websitedeveloper-buildyourbrand-startablog-activity-7228644717570265088--yKk?utm_source=share&utm_medium=member_desktop&rcm=ACoAAESxBI8BxvPwjujJf4hh5F_riANWHXN8Vt8' },
     ],
   },
   {
-    name: "Personal Branding",
-    description: "Crafting unique online identities and portfolios for individuals and professionals.",
+    name: 'Personal Branding',
+    description: 'Designing unique online identities that stand out.',
     projects: [
-      "Portfolio Website",
+      { title: 'Web Pricing Page', link: 'https://web-pricing.vercel.app/' },
+      { title: 'AI Startup Landing Page', link: 'https://abdullahdigital.github.io/vapi/' },
+      { title: 'Personal Portfolio', link: 'https://abdullahdigital.github.io/portfolio/' },
+      { title: 'Coming Soon Page', link: 'https://abdullahdigital.github.io/comingsoon/' },
+      { title: 'Landing Page', link: 'https://abdullahdigital.github.io/landingpage/' },
     ],
   },
   {
-    name: "Freelance Platforms",
-    description: "Developing platforms that connect freelancers with clients for various services.",
+    name: 'Freelance Platforms',
+    description: 'Empowering freelancers by connecting skills with opportunities.',
     projects: [
-      "Freelance Jobs Platform",
+      { title: 'Freelance Jobs Platform', link: 'https://mchumanresources.com/' },
     ],
   },
   {
-    name: "Food & Hospitality",
-    description: "Creating engaging web experiences for restaurants, cafes, and hospitality businesses.",
+    name: 'Healthcare',
+    description: 'Building reliable, scalable, and tailored web solutions for diverse healthcare needs.',
     projects: [
-      "Restaurant Website",
+      { title: 'Dentist Website', link: '#' },
+      { title: 'Blood Donation App', link: '#' },
     ],
   },
   {
-    name: "Healthcare",
-    description: "Developing comprehensive digital solutions for the healthcare industry.",
+    name: 'Food & Hospitality',
+    description: 'Boosting dining experiences with seamless digital solutions.',
     projects: [
-      "Blood Donation Platform",
+      { title: 'Restaurant Website', link: 'https://abdullahdigital.github.io/restaurant/' },
     ],
   },
   {
-    name: "Healthcare (Specialized)",
-    description: "Building specialized digital solutions for the healthcare sector.",
+    name: 'Communication & Collaboration',
+    description: 'Creating smarter ways for teams to connect and grow.',
     projects: [
-      "Blood Donation Platform",
+      { title: 'Real timeChat App', link: 'https://www.linkedin.com/posts/abdullahdigital_webdev-chatapp-buildyourbrand-activity-7229778659383873536-u4Nr?utm_source=share&utm_medium=member_desktop&rcm=ACoAAESxBI8BxvPwjujJf4hh5F_riANWHXN8Vt8' },
     ],
   },
   {
-    name: "Food & Hospitality",
-    description: "Creating engaging web experiences for restaurants, cafes, and hospitality businesses.",
+    name: 'E-Commerce',
+    description: 'Driving online growth with powerful e-commerce solutions.',
     projects: [
-      "Restaurant Website",
+      { title: 'E-commerce Store', link: 'https://www.linkedin.com/posts/abdullahdigital_webdevelopment-ecommercewebsite-techsolutions-activity-7234047281337974784-96Kj?utm_source=share&utm_medium=member_desktop&rcm=ACoAAESxBI8BxvPwjujJf4hh5F_riANWHXN8Vt8' },
+      { title: 'Small E-commerce', link: 'https://abdullahdigital.github.io/womanandchild/' },
+      { title: 'Printer E-commerce', link: 'https://abdullahdigital.github.io/printer/' },
+      { title: 'ShopiCore E-commerce', link: 'https://abdullahdigital.github.io/shopicore/' },
     ],
   },
   {
-    name: "Healthcare",
-    description: "Developing comprehensive digital solutions for the healthcare industry.",
+    name: 'Education & Learning',
+    description: 'Making learning engaging, interactive, and accessible.',
     projects: [
-      "Blood Donation Platform",
+      { title: 'E-Learning Platform', link: 'https://www.linkedin.com/posts/abdullahdigital_websitedevelopment-onlinebussiness-businessgrowth-activity-7222806588179259392-SLOi?utm_source=share&utm_medium=member_desktop&rcm=ACoAAESxBI8BxvPwjujJf4hh5F_riANWHXN8Vt8' },
     ],
   },
   {
-    name: "Communication & Collaboration",
-    description: "Building tools that facilitate seamless communication and teamwork.",
+    name: 'Content & Publishing',
+    description: 'Simplifying content creation and distribution.',
     projects: [
-      "WhatsApp Clone",
-      "RoboSpeaker",
-      "Text to Speech",
+      { title: 'Advanced Blog', link: 'https://www.linkedin.com/posts/abdullahdigital_websitedeveloper-ngo-bloggingjourney-activity-7230801396810366976-GP1I?utm_source=share&utm_medium=member_desktop&rcm=ACoAAESxBI8BxvPwjujJf4hh5F_riANWHXN8Vt8' },
+      { title: 'Cybersecurity Blog', link: 'https://www.linkedin.com/posts/abdullahdigital_websitedeveloper-buildyourbrand-startablog-activity-7228644717570265088--yKk?utm_source=share&utm_medium=member_desktop&rcm=ACoAAESxBI8BxvPwjujJf4hh5F_riANWHXN8Vt8' },
     ],
   },
   {
-    name: "E-Commerce",
-    description: "Designing and developing online stores and e-commerce platforms.",
+    name: 'Utilities & Tools',
+    description: 'Smart tools that improve everyday productivity.',
     projects: [
-      "E-commerce Store",
-      "Small E-commerce",
-      "ShopiCore",
+      { title: 'Text Utility App', link: 'https://www.linkedin.com/posts/abdullahdigital_webdevelopment-techsolutions-businessgrowth-activity-7226455256988037120-yhbu?utm_source=share&utm_medium=member_desktop&rcm=ACoAAESxBI8BxvPwjujJf4hh5F_riANWHXN8Vt8' },
+      { title: 'Weather App', link: 'https://www.linkedin.com/posts/abdullahdigital_websitedevelopment-techsolutions-businessgrowth-activity-7227693291918536704-Ucfx?utm_source=share&utm_medium=member_desktop&rcm=ACoAAESxBI8BxvPwjujJf4hh5F_riANWHXN8Vt8' },
+      { title: 'Text Editor', link: 'https://text-hero.vercel.app/' },
+      { title: 'Robo Speaker', link: 'https://www.linkedin.com/posts/abdullahdigital_websitedevelopment-backendwebsite-businessgrowth-activity-7225336759339880448-vI19?utm_source=share&utm_medium=member_desktop&rcm=ACoAAESxBI8BxvPwjujJf4hh5F_riANWHXN8Vt8' },
     ],
   },
   {
-    name: "Education & Learning",
-    description: "Creating innovative platforms for online education and learning experiences.",
+    name: 'Music & Media',
+    description: 'Immersive platforms for music and media lovers.',
     projects: [
-      "Australian Academy Project",
+      { title: 'Music Player', link: 'https://abdullahdigital.github.io/music/' },
     ],
   },
   {
-    name: "Content & Publishing",
-    description: "Developing systems for content creation, management, and distribution.",
+    name: 'Entertainment & Gaming',
+    description: 'Captivating digital spaces for endless fun and play.',
     projects: [
-      "Blog Advance",
-    ],
-  },
-  {
-    name: "Utilities & Tools",
-    description: "Building practical web-based utilities and tools for everyday use.",
-    projects: [
-      "TextUtils",
-      "Weather App",
-      "Printer Repair Website",
-    ],
-  },
-  {
-    name: "Music & Media",
-    description: "Creating engaging platforms for music streaming and media consumption.",
-    projects: [
-      "Music Player",
-    ],
-  },
-  {
-    name: "Entertainment & Gaming",
-    description: "Developing interactive websites and platforms for entertainment and gaming.",
-    projects: [
-      "Gaming Website",
-    ],
-  },
-  {
-    name: "Web Design",
-    description: "Creating visually appealing and user-friendly website designs.",
-    projects: [
-      "Dentist Website",
-      "Coming Soon Page",
-      "Landing Page",
-      "Web Pricing Page",
-      "AI Startup Landing Page",
+      { title: 'Gaming Platform', link: 'https://abdullahdigital.github.io/ali/' },
     ],
   },
 ];

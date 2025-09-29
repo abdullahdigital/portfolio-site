@@ -8,7 +8,7 @@ export default function Industries() {
   const homepageIndustries = industriesData.slice(0, 6);
 
   return (
-    <section id="industries" className="py-20 bg-slate-900">
+    <section id="industries" className="py-10 bg-slate-900">
       <div className="container mx-auto px-4">
         <motion.h2
           className="text-4xl font-bold text-emerald-500 mb-12 text-center"
@@ -38,7 +38,9 @@ export default function Industries() {
                 <ul className="list-disc list-inside text-gray-400">
                   {industry.projects.map((project, projIndex) => (
                     <li key={projIndex}>
-                      {project}
+                      <Link href={project.link} className="hover:text-emerald-400 transition-colors duration-200" target="_blank" rel="noopener noreferrer">
+                        {project.title}
+                      </Link>
                     </li>
                   ))}
                 </ul>

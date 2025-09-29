@@ -5,11 +5,12 @@ import { useState, useEffect } from 'react';
 import { industriesData } from '../../data/industriesData';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import Link from 'next/link';
 
 type Industry = {
   name: string;
   description: string;
-  projects: string[];
+  projects: { title: string; link: string }[];
 };
 
 export default function IndustriesPage() {
@@ -29,9 +30,9 @@ export default function IndustriesPage() {
   return (
     <div className="min-h-screen bg-gray-900 text-white flex flex-col">
       <Navbar />
-      <main className="flex-grow container mx-auto px-4 py-24">
+      <main className="flex-grow container mx-auto px-4 py-22">
         <motion.h2
-          className="text-4xl font-bold text-emerald-500 mb-12 text-center"
+          className="text-4xl font-bold text-emerald-500 mb-6 text-center"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -68,7 +69,9 @@ export default function IndustriesPage() {
                 <ul className="list-disc list-inside text-gray-400">
                   {industry.projects.map((project, projIndex) => (
                     <li key={projIndex}>
-                      {project}
+                      <Link href={project.link} className="hover:text-emerald-400 transition-colors duration-200" target="_blank" rel="noopener noreferrer">
+                        {project.title}
+                      </Link>
                     </li>
                   ))}
                 </ul>

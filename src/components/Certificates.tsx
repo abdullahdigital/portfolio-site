@@ -16,43 +16,43 @@ interface Certificate {
 const certificatesData: Certificate[] = [
   {
     id: '2',
-    title: 'React',
-    issuer: 'Various Platforms',
+    title: 'React Js Developer',
+    issuer: 'National Center for Cyber Security Pakistan (NCCS)',
     image: '/cert/react2.jpeg',
     url: '#',
   },
   {
     id: '1',
     title: 'Full Stack Django Developer',
-    issuer: 'Various Platforms',
+    issuer: 'Not So Formal Show',
     image: '/cert/fullstackdjangodeveloper1.jpeg',
     url: '#',
   },
   {
     id: '3',
-    title: 'Wordpress',
-    issuer: 'Various Platforms',
+    title: 'Wordpress Development',
+    issuer: 'Udemy',
     image: '/cert/wordpress3.jpg',
     url: '#',
   },
   {
     id: '6',
-    title: 'Udemy Web Intro Hacking',
-    issuer: 'Various Platforms',
-    image: '/cert/udemy-web-intro-hacking6.jpg',
+    title: 'Udemy Web Hacking',
+    issuer: 'Udemy',
+    image: '/cert/udemy web intro hacking.png',
     url: '#',
   },
   {
     id: '4',
-    title: 'Frontend',
-    issuer: 'Various Platforms',
+    title: 'Frontend Website Developer',
+    issuer: 'Professional Training Insititute (EVS)',
     image: '/cert/frontend4.png',
     url: '#',
   },
   {
     id: '5',
     title: 'Web Dev E-commerce',
-    issuer: 'Various Platforms',
+    issuer: 'Great Learning',
     image: '/cert/webdevecommerce5.png',
     url: '#',
   },
@@ -160,7 +160,7 @@ const Certificates = () => {
   };
 
   return (
-    <section id="certificates" className="py-20 bg-slate-900 px-4 relative">
+    <section id="certificates" className="py-5 bg-slate-900 px-4 relative">
       <div className="w-full text-center">
         <motion.h2
           className="text-4xl font-bold text-emerald-500 mb-12"

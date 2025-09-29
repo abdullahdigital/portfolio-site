@@ -131,7 +131,7 @@ const Skills = () => {
   const skillsToDisplay = filteredSkills.slice(0, 6);
 
   return (
-    <section id="skills" className="py-20 bg-slate-900 px-4"> {/* Added id for navigation */}
+    <section id="skills" className="py-10 bg-slate-900 px-4"> {/* Added id for navigation */}
       <div className="w-full text-center">
         <motion.h2
           className="text-4xl font-bold text-emerald-500 mb-12"
