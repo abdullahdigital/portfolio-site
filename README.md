@@ -20,7 +20,7 @@ Explore my work and see how I bring creativity and technical prowess together to
 Ready to elevate your digital presence? I'm eager to collaborate on exciting new ventures.
 
 -   📧 **Email**: [abdullahwebhero@gmail.com](mailto:abdullahwebhero@gmail.com)
--   🌐 **Portfolio**: [Your Portfolio](https://your-portfolio-url.com)
+-   🌐 **Portfolio**: [Your Portfolio](https://abdullahdigital.vercel.app)
 -   🔗 **LinkedIn**: [Abdullah Digital](https://www.linkedin.com/in/abdullahdigital)
 -   📘 **Facebook**: [Abdullah Webmaster](https://www.facebook.com/abdullahwebmaster)
 -   📸 **Instagram**: [Abdullah Webmaster](https://www.instagram.com/abdullahwebmaster)
