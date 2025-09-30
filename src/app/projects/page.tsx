@@ -20,8 +20,7 @@ const ProjectsPage = () => {
         (selectedCategory === 'All' || project.category === selectedCategory) &&
         (
           project.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-          project.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-          project.tags.some((tag) => tag.toLowerCase().includes(searchTerm.toLowerCase()))
+          project.description.toLowerCase().includes(searchTerm.toLowerCase())
         )
     );
     setFilteredProjects(filtered);

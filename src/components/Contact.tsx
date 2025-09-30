@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { toast } from "react-hot-toast";
 import {
   FaEnvelope,
   FaLinkedinIn, // Corrected from FaLinkedin
@@ -10,7 +9,6 @@ import {
   FaInstagram,
 } from "react-icons/fa";
 import React from 'react';
-import { useForm, ValidationError } from '@formspree/react';
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -25,114 +23,6 @@ const Contact: React.FC = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const Contact = () => {
-    const [state, handleSubmit] = useForm("xjkayakq");
-  
-    if (state.succeeded) {
-      return <p className="text-white text-center text-lg">Thanks for your message! I'll get back to you soon.</p>;
-    }
-  
-    return (
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true, amount: 0.5 }}
-        transition={{ duration: 1 }}
-        className="relative z-10 flex flex-col items-center justify-center min-h-screen bg-black text-white py-12 px-4"
-        id="contact"
-      >
-        <motion.p
-          initial={{ opacity: 0, y: -50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.5 }}
-          transition={{ duration: 0.8 }}
-          className="z-10 relative text-4xl md:text-5xl font-bold mb-8 text-center"
-        >
-          Contact <span className="text-purple-500">Me</span>
-        </motion.p>
-  
-        <div className="z-10 relative w-full max-w-md bg-gray-800 p-8 rounded-lg shadow-lg">
-          <form onSubmit={handleSubmit} className="space-y-6">
-            <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-300">Name</label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                className="mt-1 block w-full p-3 border border-gray-600 rounded-md bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
-                placeholder="Your Name"
-                required
-              />
-            </div>
-            <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-300">Email</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                className="mt-1 block w-full p-3 border border-gray-600 rounded-md bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
-                placeholder="Your Email"
-                required
-              />
-              <ValidationError
-                prefix="Email"
-                field="email"
-                errors={state.errors}
-                className="text-red-400 text-sm mt-1"
-              />
-            </div>
-            <div>
-              <label htmlFor="message" className="block text-sm font-medium text-gray-300">Message</label>
-              <textarea
-                id="message"
-                name="message"
-                rows={5}
-                className="mt-1 block w-full p-3 border border-gray-600 rounded-md bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
-                placeholder="Your Message"
-                required
-              ></textarea>
-              <ValidationError
-                prefix="Message"
-                field="message"
-                errors={state.errors}
-                className="text-red-400 text-sm mt-1"
-              />
-            </div>
-            <button
-              type="submit"
-              disabled={state.submitting}
-              className="w-full py-3 px-4 bg-purple-600 hover:bg-purple-700 rounded-md text-white font-semibold transition duration-300 ease-in-out disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              Submit
-            </button>
-          </form>
-        </div>
-  
-        <div className="z-10 relative mt-8 flex space-x-6">
-          <a href="mailto:youremail@example.com" className="text-gray-400 hover:text-white transition duration-300">
-            <FaEnvelope size={30} />
-          </a>
-          <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition duration-300">
-            <FaLinkedinIn size={30} />
-          </a>
-          <a href="https://facebook.com/yourprofile" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition duration-300">
-            <FaFacebookF size={30} />
-          </a>
-          <a href="https://instagram.com/yourprofile" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition duration-300">
-            <FaInstagram size={30} />
-          </a>
-        </div>
-  
-        <motion.div
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.5, ease: "easeOut" }}
-          className="absolute inset-0 z-0 w-full h-full bg-gradient-to-r from-emerald-600 to-violet-600 opacity-70 blur-3xl lg:static lg:w-64 lg:h-64 lg:mt-8"
-        ></motion.div>
-      </motion.div>
-    );
-  };
-
   return (
     <section
       id="contact"
@@ -145,7 +35,7 @@ const Contact: React.FC = () => {
           transition={{ duration: 0.8 }}
           className="text-4xl font-extrabold text-center mb-12 text-emerald-400"
         >
-          Contact Abdullah: Let's Build Something Great Together
+          Contact Abdullah: Let&apos;s Build Something Great Together
         </motion.h2>
 
         <div className="flex flex-col lg:flex-row items-start justify-center lg:space-x-16">

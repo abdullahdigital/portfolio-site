@@ -1,22 +1,27 @@
 "use client";
 
-import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
-import { FaBars, FaTimes, FaArrowUp } from 'react-icons/fa';
-import { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
+import { useState, useEffect, useMemo } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
-import { usePathname } from 'next/navigation'; // Import usePathname
+import { FaTimes, FaBars, FaArrowUp } from 'react-icons/fa';
+
+interface NavLink {
+  name: string;
+  href: string;
+}
 
 const Navbar = () => {
+  const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-  const pathname = usePathname(); // Get current pathname
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
-  const navLinks = [
+  const navLinks: NavLink[] = useMemo(() => [
     { name: 'Home', href: '#hero' },
     { name: 'Skills', href: '#skills' },
     { name: 'Industries', href: '#industries' },
@@ -24,23 +29,23 @@ const Navbar = () => {
     { name: 'Certificates', href: '#certificates' },
     { name: 'Referral', href: '/referral' },
     { name: 'Contact', href: '#contact' },
-  ];
+  ], []);
 
-  const [activeSection, setActiveSection] = useState('hero');
+  const [activeSection, setActiveSection] = useState<string>('hero');
 
   useEffect(() => {
     const handleScroll = () => {
-      // if (pathname !== '/') return; // Only track sections on the homepage
+      // if (pathname !== '/'') return; // Only track sections on the homepage
 
-      const sections = navLinks.filter(link => link.href.startsWith('#'))
-        .map(link => document.getElementById(link.href.substring(1)))
-        .filter(section => section !== null) as HTMLElement[];
+      const sections = navLinks.filter((link: NavLink) => link.href.startsWith('#'))
+        .map((link: NavLink) => document.getElementById(link.href.substring(1)))
+        .filter((section: HTMLElement | null): section is HTMLElement => section !== null) as HTMLElement[];
 
       const scrollY = window.scrollY;
 
       let currentActiveSection = 'hero'; // Default to hero
       for (let i = 0; i < sections.length; i++) {
-        const section = sections[i];
+        const section: HTMLElement = sections[i];
         if (section.offsetTop <= scrollY + 100) {
           currentActiveSection = section.id;
         } else {
@@ -83,7 +88,7 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-6">
-            {navLinks.map((link, index) => (
+            {navLinks.map((link: NavLink) => (
               <motion.div
                 key={link.name}
                 whileHover={{ scale: 1.05, color: "#34D399" }}
@@ -118,13 +123,13 @@ const Navbar = () => {
               className="md:hidden bg-gray-800/90 py-4 mt-2"
             >
               <ul className="flex flex-col items-center space-y-4">
-                {navLinks.map((link, index) => (
+                {navLinks.map((link: NavLink) => (
                   <motion.li
                     key={link.name}
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -20 }}
-                    transition={{ duration: 0.3, delay: 0.05 * index }}
+                    transition={{ duration: 0.3 }}
                     className="py-2"
                   >
                     <Link
@@ -161,6 +166,6 @@ const Navbar = () => {
       </AnimatePresence>
     </>
   );
-};
+}
 
 export default Navbar;

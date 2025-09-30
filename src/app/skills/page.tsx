@@ -77,7 +77,6 @@ const skillsData: Skill[] = [
 ];
 
 const SkillsPage = () => {
-  const [displayMode, setDisplayMode] = useState('all');
   const [activeCategory, setActiveCategory] = useState('All');
 
   const categories = ['All', ...Array.from(new Set(skillsData.map(skill => skill.category)))];

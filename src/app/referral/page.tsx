@@ -4,8 +4,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { FaCheckCircle, FaEnvelope, FaLinkedinIn, FaFacebookF, FaInstagram } from 'react-icons/fa';
-import { FaBars, FaTimes, FaArrowUp } from 'react-icons/fa';
+import { FaCheckCircle, FaEnvelope, FaLinkedinIn, FaFacebookF, FaInstagram, FaArrowUp } from 'react-icons/fa';
 import { useForm, ValidationError } from '@formspree/react';
 
 export default function ReferralPage() {
@@ -88,7 +87,7 @@ export default function ReferralPage() {
           <FaCheckCircle className="text-emerald-400 text-6xl mx-auto mb-6" />
           <h3 className="text-3xl font-bold text-emerald-400 mb-4">Thank You!</h3>
           <p className="text-lg text-gray-300 mb-6">
-            Your referral has been successfully submitted. I'll get back to you soon!
+            Your referral has been successfully submitted. I&apos;ll get back to you soon!
           </p>
           <button
             onClick={() => window.location.reload()}
@@ -265,7 +264,7 @@ export default function ReferralPage() {
                     name="additionalDetails"
                     rows={3}
                     className="w-full px-3 py-2 bg-gray-700/70 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 text-white transition"
-                    placeholder="Any other information you'd like to share..."
+                    placeholder="Any other information you&apos;d like to share..."
                   />
                   <ValidationError
                     prefix="Additional Details"
@@ -288,10 +287,10 @@ export default function ReferralPage() {
       
             {/* Right: Social Media Links */}
             <motion.div
-              className="w-full lg:w-1/2 flex flex-col items-center lg:items-start space-y-6 relative"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
+              className="w-full lg:w-1/2 flex flex-col items-center lg:items-start space-y-6 relative"
             >
               <motion.p
                 className="text-lg text-gray-300 text-center lg:text-left z-10 relative"
@@ -299,7 +298,7 @@ export default function ReferralPage() {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.3 }}
               >
-                Connect with me on social media:
+                Prefer direct contact? Here are my links:
               </motion.p>
       
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full z-10 relative">

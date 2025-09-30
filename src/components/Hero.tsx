@@ -45,7 +45,7 @@ const Hero = () => {
           className="lg:w-2/5 mb-8 lg:mb-0 flex flex-col justify-center h-full"
         >
           <h1 className="text-4xl md:text-5xl font-bold text-emerald-500 leading-tight">
-            Hi, I'm Abdullah,
+            Hi, I&apos;m Abdullah,
             <br />
             <TypeAnimation
               sequence={[

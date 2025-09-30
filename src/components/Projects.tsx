@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Tilt from 'react-parallax-tilt';
 import { projectsData, ProjectCardProps } from '@/data/projectsData';
 
-export const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, image, link, tags }) => {
+export const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, image, link }) => {
   return (
     <Tilt
       tiltMaxAngleX={10}
