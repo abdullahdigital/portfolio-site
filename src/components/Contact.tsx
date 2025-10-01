@@ -4,11 +4,13 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import {
   FaEnvelope,
-  FaLinkedinIn, // Corrected from FaLinkedin
-  FaFacebookF, // Reverted from FaFacebook to FaFacebookF
+  FaLinkedinIn,
+  FaFacebookF,
   FaInstagram,
+  FaCheckCircle,
 } from "react-icons/fa";
 import React from 'react';
+import { useForm, ValidationError } from '@formspree/react';
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -17,11 +19,38 @@ const Contact: React.FC = () => {
     message: "",
   });
 
+  const [state, handleSubmit] = useForm("xkgqjqoq"); // Using the same Formspree ID for now
+
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
+
+  if (state.succeeded) {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 text-white flex items-center justify-center p-4">
+        <motion.div
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="bg-gray-800/70 p-8 md:p-10 rounded-2xl shadow-2xl border border-gray-700 text-center w-full max-w-md mx-auto"
+        >
+          <FaCheckCircle className="text-emerald-400 text-6xl mx-auto mb-6" />
+          <h3 className="text-3xl font-bold text-emerald-400 mb-4">Thank You!</h3>
+          <p className="text-lg text-gray-300 mb-6">
+            Your message has been successfully sent. I&apos;ll get back to you soon!
+          </p>
+          <button
+            onClick={() => window.location.reload()}
+            className="bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 shadow-lg w-full md:w-auto"
+          >
+            Send Another Message
+          </button>
+        </motion.div>
+      </div>
+    );
+  }
 
   return (
     <section
@@ -49,6 +78,7 @@ const Contact: React.FC = () => {
             <form
               action="https://formspree.io/f/xjkayakq"
               method="POST"
+              onSubmit={handleSubmit}
               className="backdrop-blur-md bg-gray-800/70 p-8 rounded-2xl shadow-2xl border border-gray-700"
             >
               <div className="mb-6">
@@ -86,6 +116,12 @@ const Contact: React.FC = () => {
                   placeholder="example@email.com"
                   required
                 />
+                <ValidationError
+                  prefix="Email"
+                  field="email"
+                  errors={state.errors}
+                  className="text-red-400 text-sm mt-1"
+                />
               </div>
               <div className="mb-6">
                 <label
@@ -104,11 +140,18 @@ const Contact: React.FC = () => {
                   placeholder="Write your message here..."
                   required
                 ></textarea>
+                <ValidationError
+                  prefix="Message"
+                  field="message"
+                  errors={state.errors}
+                  className="text-red-400 text-sm mt-1"
+                />
               </div>
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 type="submit"
+                disabled={state.submitting}
                 className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 shadow-lg"
               >
                 Send Message
