@@ -93,7 +93,7 @@ const Hero = () => {
               boxShadow: ['0 0 10px rgba(0,255,0,0.5)', '0 0 20px rgba(0,255,0,0.8)', '0 0 10px rgba(0,255,0,0.5)'],
             }}
             transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-            className="relative w-96 h-96 rounded-full overflow-hidden border-4 border-emerald-500 shadow-lg"
+            className="relative w-64 h-64 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-emerald-500 shadow-lg"
           >
             <Image
               src="/img/my pic.jpeg" // Updated to use the correct image path

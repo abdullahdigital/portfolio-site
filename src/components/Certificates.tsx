@@ -79,7 +79,6 @@ const CertificateCard: React.FC<{ certificate: Certificate; onClick: () => void 
             width={400} 
             height={250} 
             className="w-full h-48 object-cover rounded-lg"
-            priority={true}
           />
         </div>
         <div className="p-4">
@@ -111,12 +110,11 @@ const CertificateModal: React.FC<{ certificate: Certificate; onClose: () => void
         <h2 className="text-3xl font-bold text-white mb-4">{certificate.title}</h2>
         <p className="text-gray-400 mb-4">{certificate.issuer}</p>
         <Image 
-          src={certificate.image} 
-          alt={`${certificate.title} Certificate`} 
-          width={800} 
-          height={500} 
-          className="w-full h-auto rounded-lg mb-4"
-          priority={true}
+          src={certificate.image}
+          alt={certificate.title}
+          width={800}
+          height={600}
+          className="w-full h-full object-contain"
         />
         <a
           href={certificate.url}

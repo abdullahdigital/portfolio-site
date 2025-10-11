@@ -30,15 +30,15 @@ export const industriesData: Industry[] = [
     name: 'Freelance Platforms',
     description: 'Empowering freelancers by connecting skills with opportunities.',
     projects: [
-      { title: 'Freelance Jobs Platform', link: 'https://mchumanresources.com/' },
+      { title: 'Freelance Jobs Platform', link: 'https://drive.google.com/file/d/1bNDfD9i6xd60CFRePHl-Z8mF1pQkOcyr/view?usp=sharing' },
     ],
   },
   {
     name: 'Healthcare',
     description: 'Building reliable, scalable, and tailored web solutions for diverse healthcare needs.',
     projects: [
-      { title: 'Dentist Website', link: '#' },
-      { title: 'Blood Donation App', link: '#' },
+      { title: 'Dentist Website', link: 'https://drive.google.com/file/d/10SRF4gzLqOkPdrzaCGOIHIDQ50529x-9/view?usp=sharing' },
+      { title: 'Blood Donation App', link: 'https://drive.google.com/file/d/1YE414TJXeFz-9Mnw9U8BaIHllY3gjr9w/view?usp=sharing' },
     ],
   },
   {
