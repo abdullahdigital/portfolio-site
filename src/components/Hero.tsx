@@ -48,25 +48,26 @@ const Hero = () => {
             Hi, I&apos;m Abdullah,
             <br />
             <TypeAnimation
-              sequence={[
-                'A Full-Stack Developer',
-                1000,
-                'A UI/UX Enthusiast',
-                1000,
-                'A Problem Solver',
-                1000,
-                'Builder of Secure & Scalable Apps',
-                1000,
-              ]}
+             sequence={[
+    'Full-Stack Web Developer',
+    1000,
+    'Cybersecurity Guy',
+    1000,
+    'AI Integration & Automater',
+    1000,
+    'Agentic AI Solutions Provider',
+    1000,
+  ]}
               wrapper="span"
               speed={50}
               repeat={Infinity}
               className="text-emerald-400"
             />
           </h1>
-          <p className="mt-3 text-base text-gray-300">
-              I design, build, and secure modern web apps — blending creativity with clean, scalable code.
-          </p>
+       <p className="mt-3 text-base text-gray-300">
+  I create modern web apps with AI features — designed to be fast, secure, reliable and responsive.
+</p>
+
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}

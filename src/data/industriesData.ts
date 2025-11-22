@@ -66,6 +66,13 @@ export const industriesData: Industry[] = [
     ],
   },
   {
+    name: 'News & Media',
+    description: 'Delivering timely and engaging content through modern news platforms.',
+    projects: [
+      { title: 'News App', link: 'https://drive.google.com/file/d/1U4Wner4q60Vy1hkMKHV3M8-tGA5TcAl2/view?usp=sharing' },
+    ],
+  },
+  {
     name: 'Education & Learning',
     description: 'Making learning engaging, interactive, and accessible.',
     projects: [
