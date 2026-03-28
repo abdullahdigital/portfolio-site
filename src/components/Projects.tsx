@@ -71,7 +71,7 @@ const Projects = () => {
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.5 }}
         >
-          My Portfolio: Featured Full-Stack Development Projects
+          All Public Projects ({projectsData.length - 1}+)
         </motion.h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {featuredProjects.map((project: ProjectCardProps, index: number) => (
@@ -96,7 +96,7 @@ const Projects = () => {
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.5, delay: featuredProjects.length * 0.1 }}
         >
-          All Projects ({projectsData.length}+)
+          All Projects ({projectsData.length - 1}+)
         </motion.a>
       </div>
     </section>

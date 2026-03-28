@@ -9,6 +9,8 @@ export const industriesData: Industry[] = [
     name: 'Cybersecurity',
     description: 'Securing businesses against modern digital threats.',
     projects: [
+      { title: 'AI-Powered Parallel Log Analyzer', link: 'https://drive.google.com/file/d/13XXwpDGmJx4TP1IB0GR3X6O-ZC538Gek/view?usp=sharing' },
+      { title: 'Advanced Anti Forensics Detector', link: 'https://drive.google.com/file/d/1P-7_miDS_qlspqadcwrtsG4SYwveBnWL/view?usp=sharing' },
       { title: 'SIEM Dashboard', link: 'https://siem-nimbus.vercel.app/' },
       { title: 'Flask SIEM', link: 'https://www.linkedin.com/posts/abdullahdigital_websitedevelopment-flaskdeveloper-businesswebsite-activity-7231896232263065600-0k5A?utm_source=share&utm_medium=member_desktop&rcm=ACoAAESxBI8BxvPwjujJf4hh5F_riANWHXN8Vt8' },
       { title: 'SIEM System', link: 'https://www.linkedin.com/posts/abdullahdigital_webdevelopment-techinnovation-projectshowcase-activity-7232974479205826560-lZEZ?utm_source=share&utm_medium=member_desktop&rcm=ACoAAESxBI8BxvPwjujJf4hh5F_riANWHXN8Vt8' },

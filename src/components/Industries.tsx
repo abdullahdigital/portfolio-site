@@ -36,13 +36,20 @@ export default function Industries() {
               <div className="mt-2">
                 <h4 className="text-lg font-medium text-emerald-300 mb-2">Projects:</h4>
                 <ul className="list-disc list-inside text-gray-400">
-                  {industry.projects.map((project, projIndex) => (
+                  {industry.projects.slice(0, 3).map((project, projIndex) => (
                     <li key={projIndex}>
                       <Link href={project.link} className="hover:text-emerald-400 transition-colors duration-200" target="_blank" rel="noopener noreferrer">
                         {project.title}
                       </Link>
                     </li>
                   ))}
+                  {industry.projects.length > 3 && (
+                    <li>
+                      <Link href="/industries" className="text-emerald-400 hover:text-emerald-500 transition-colors duration-200">
+                        Click for more
+                      </Link>
+                    </li>
+                  )}
                 </ul>
               </div>
             </motion.div>
@@ -56,7 +63,7 @@ export default function Industries() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              All Industries ({industriesData.length}+)
+              All Industries ({industriesData.length - 1}+)
             </motion.button>
           </Link>
         </div>

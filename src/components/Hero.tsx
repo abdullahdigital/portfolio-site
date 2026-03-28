@@ -51,9 +51,9 @@ const Hero = () => {
              sequence={[
     'Full-Stack Web Developer',
     1000,
-    'Cybersecurity Guy',
+    'Cybersecurity & Pen-Tester',
     1000,
-    'AI Integration & Automater',
+    'AI Automation Specialist',
     1000,
     'Agentic AI Solutions Provider',
     1000,
@@ -65,7 +65,7 @@ const Hero = () => {
             />
           </h1>
        <p className="mt-3 text-base text-gray-300">
-  I create modern web apps with AI features — designed to be fast, secure, reliable and responsive.
+  I create modern web apps with AI features designed to be fast, secure, seo optimized and responsive.
 </p>
 
             <motion.button

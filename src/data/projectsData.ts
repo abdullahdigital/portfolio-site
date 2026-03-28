@@ -13,6 +13,26 @@ export interface ProjectCardProps {
 export const projectsData: ProjectCardProps[] = [
   {
     id: 1,
+    title: 'AI-Powered Parallel Log Analyzer',
+    description: 'An intelligent log analyzer leveraging AI for high-speed parallel processing.',
+    image: '/projects/stats-logs.png',
+    link: 'https://drive.google.com/file/d/13XXwpDGmJx4TP1IB0GR3X6O-ZC538Gek/view?usp=sharing',
+    github: '#',
+    category: 'Cybersecurity',
+    isFeatured: true,
+  },
+  {
+    id: 2,
+    title: 'Advanced Anti Forensics Detector',
+    description: 'A sophisticated tool designed to detect and neutralize anti-forensic measures.',
+    image: '/projects/anti-forensics-detector.png',
+    link: 'https://drive.google.com/file/d/1P-7_miDS_qlspqadcwrtsG4SYwveBnWL/view?usp=sharing',
+    github: '#',
+    category: 'Cybersecurity',
+    isFeatured: true,
+  },
+  {
+    id: 3,
     title: 'SIEM Dashboard',
     description: 'Interactive SIEM dashboard for real-time threat detection and monitoring.',
     image: '/projects/1siem-dashboard.png',
@@ -22,7 +42,7 @@ export const projectsData: ProjectCardProps[] = [
     isFeatured: true,
   },
   {
-    id: 2,
+    id: 4,
     title: 'Web Pricing Page',
     description: 'Modern, responsive pricing page built to boost conversions.',
     image: '/projects/2web-pricing.png',
@@ -32,7 +52,7 @@ export const projectsData: ProjectCardProps[] = [
     isFeatured: true,
   },
   {
-    id: 3,
+    id: 5,
     title: 'Freelance Jobs Platform',
     description: 'Full-stack platform connecting freelancers with global job opportunities.',
     image: '/projects/3freelance-jobs-platform.png',
@@ -42,7 +62,7 @@ export const projectsData: ProjectCardProps[] = [
     isFeatured: true,
   },
   {
-    id: 4,
+    id: 6,
     title: 'Dentist Website',
     description: 'Clean, professional dental clinic site with service showcase and booking.',
     image: '/projects/4dentist.png',
@@ -52,7 +72,7 @@ export const projectsData: ProjectCardProps[] = [
     isFeatured: true,
   },
   {
-    id: 5,
+    id: 7,
     title: 'Restaurant Website',
     description: 'Elegant restaurant site featuring menu, reservations, and contact.',
     image: '/projects/5restaurant.png',
@@ -62,7 +82,7 @@ export const projectsData: ProjectCardProps[] = [
     isFeatured: true,
   },
   {
-    id: 6,
+    id: 8,
     title: 'AI Startup Landing Page',
     description: 'High-converting AI startup landing page for investors and early adopters.',
     image: '/projects/6ai-startup-landingpage.png',
@@ -72,7 +92,7 @@ export const projectsData: ProjectCardProps[] = [
     isFeatured: true,
   },
   {
-    id: 7,
+    id: 9,
     title: 'Blood Donation App',
     description: 'Mobile app linking blood donors with recipients through real-time requests.',
     image: '/projects/7blood-donation.png',
@@ -82,7 +102,7 @@ export const projectsData: ProjectCardProps[] = [
     isFeatured: false,
   },
   {
-    id: 8,
+    id: 10,
     title: 'News App',
     description: 'A dynamic news application delivering real-time updates and personalized content.',
     image: '/projects/news-app.png',
@@ -92,7 +112,7 @@ export const projectsData: ProjectCardProps[] = [
     isFeatured: false,
   },
   {
-    id: 9,
+    id: 11,
     title: 'Chat App',
     description: 'Real-time messaging app with chat, group, and media sharing features.',
     image: '/projects/8whatsapp.png',
@@ -102,7 +122,7 @@ export const projectsData: ProjectCardProps[] = [
     isFeatured: false,
   },
   {
-    id: 10,
+    id: 12,
     title: 'E-commerce Dashboard',
     description: 'Admin dashboard for managing e-commerce operations, sales, and inventory.',
     image: '/projects/9ecom.png',
@@ -112,7 +132,7 @@ export const projectsData: ProjectCardProps[] = [
     isFeatured: false,
   },
   {
-    id: 11,
+    id: 13,
     title: 'Academy Website',
     description: 'Educational platform offering courses, resources, and student management.',
     image: '/projects/10academy.png',
@@ -122,7 +142,7 @@ export const projectsData: ProjectCardProps[] = [
     isFeatured: false,
   },
   {
-    id: 12,
+    id: 14,
     title: 'Advanced Blog',
     description: 'Feature-rich blogging platform with user authentication and content management.',
     image: '/projects/11blog-advance.png',
@@ -132,7 +152,7 @@ export const projectsData: ProjectCardProps[] = [
     isFeatured: false,
   },
   {
-    id: 13,
+    id: 15,
     title: 'Cybersecurity Blog',
     description: 'Informative blog focusing on cybersecurity news, tips, and best practices.',
     image: '/projects/12blog-cyber.png',
@@ -142,7 +162,7 @@ export const projectsData: ProjectCardProps[] = [
     isFeatured: false,
   },
   {
-    id: 14,
+    id: 16,
     title: 'Text Utility App',
     description: 'A versatile web tool for text manipulation, analysis, and formatting.',
     image: '/projects/13textUtils.png',
@@ -152,7 +172,7 @@ export const projectsData: ProjectCardProps[] = [
     isFeatured: false,
   },
   {
-    id: 15,
+    id: 17,
     title: 'Small E-commerce',
     description: 'A compact e-commerce solution for small businesses to showcase and sell products.',
     image: '/projects/14small-ecom.png',
@@ -162,7 +182,7 @@ export const projectsData: ProjectCardProps[] = [
     isFeatured: false,
   },
   {
-    id: 16,
+    id: 18,
     title: 'Weather App',
     description: 'Real-time weather application providing forecasts and conditions for any location.',
     image: '/projects/15weather.png',
@@ -172,7 +192,7 @@ export const projectsData: ProjectCardProps[] = [
     isFeatured: false,
   },
   {
-    id: 17,
+    id: 19,
     title: 'Text Editor',
     description: 'A simple yet functional web-based text editor for quick notes and code snippets.',
     image: '/projects/16text.png',
@@ -182,7 +202,7 @@ export const projectsData: ProjectCardProps[] = [
     isFeatured: false,
   },
   {
-    id: 18,
+    id: 20,
     title: 'Printer E-commerce',
     description: 'Specialized e-commerce platform for printers and printing supplies.',
     image: '/projects/17printer.png',
@@ -192,7 +212,7 @@ export const projectsData: ProjectCardProps[] = [
     isFeatured: false,
   },
   {
-    id: 19,
+    id: 21,
     title: 'Personal Portfolio',
     description: 'A showcase of my work, skills, and professional journey.',
     image: '/projects/18portfolio.png',
@@ -202,7 +222,7 @@ export const projectsData: ProjectCardProps[] = [
     isFeatured: false,
   },
   {
-    id: 20,
+    id: 22,
     title: 'Robo Speaker',
     description: 'A fun utility app that converts text into speech with a robotic voice.',
     image: '/projects/19robospeaker.png',
@@ -212,7 +232,7 @@ export const projectsData: ProjectCardProps[] = [
     isFeatured: false,
   },
   {
-    id: 21,
+    id: 23,
     title: 'Flask SIEM',
     description: 'A Security Information and Event Management (SIEM) system built with Flask.',
     image: '/projects/20flask-siem.png',
@@ -222,7 +242,7 @@ export const projectsData: ProjectCardProps[] = [
     isFeatured: false,
   },
   {
-    id: 22,
+    id: 24,
     title: 'SIEM System',
     description: 'Comprehensive SIEM solution for real-time security monitoring and threat detection.',
     image: '/projects/21siem.png',
@@ -232,7 +252,7 @@ export const projectsData: ProjectCardProps[] = [
     isFeatured: false,
   },
   {
-    id: 23,
+    id: 25,
     title: 'Music Player',
     description: 'A sleek and functional music player with playlist management and audio controls.',
     image: '/projects/22music.png',
@@ -242,7 +262,7 @@ export const projectsData: ProjectCardProps[] = [
     isFeatured: false,
   },
   {
-    id: 24,
+    id: 26,
     title: 'Gaming Platform',
     description: 'An interactive platform for casual gaming and entertainment.',
     image: '/projects/23gaming.png',
@@ -252,7 +272,7 @@ export const projectsData: ProjectCardProps[] = [
     isFeatured: false,
   },
   {
-    id: 25,
+    id: 27,
     title: 'ShopiCore E-commerce',
     description: 'Modern e-commerce platform with advanced product management and secure checkout.',
     image: '/projects/24shopicore.png',
@@ -262,7 +282,7 @@ export const projectsData: ProjectCardProps[] = [
     isFeatured: false,
   },
   {
-    id: 26,
+    id: 28,
     title: 'Coming Soon Page',
     description: 'A stylish coming soon page to build anticipation for a new website or product.',
     image: '/projects/25comingsoon.png',
@@ -272,7 +292,7 @@ export const projectsData: ProjectCardProps[] = [
     isFeatured: false,
   },
   {
-    id: 27,
+    id: 29,
     title: 'Landing Page',
     description: 'A high-converting landing page designed to capture leads and showcase services.',
     image: '/projects/26landingpage.png',
