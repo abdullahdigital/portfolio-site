@@ -11,6 +11,8 @@ export const industriesData: Industry[] = [
     projects: [
       { title: 'AI-Powered Parallel Log Analyzer', link: 'https://drive.google.com/file/d/13XXwpDGmJx4TP1IB0GR3X6O-ZC538Gek/view?usp=sharing' },
       { title: 'Advanced Anti Forensics Detector', link: 'https://drive.google.com/file/d/1P-7_miDS_qlspqadcwrtsG4SYwveBnWL/view?usp=sharing' },
+      { title: 'Agentic Internship Scam Investigator (OSINT + AI Agents)', link: 'https://drive.google.com/file/d/1ZCTl0cOpFL3D4EutgOHmI8tMyhEXHMrR/view' },
+      { title: 'AI-Powered GRC Platform', link: 'https://drive.google.com/file/d/1YD8lOEjx6DiDOBX3yXMD7bx2hIut9UKY/view' },
       { title: 'SIEM Dashboard', link: 'https://siem-nimbus.vercel.app/' },
       { title: 'Flask SIEM', link: 'https://www.linkedin.com/posts/abdullahdigital_websitedevelopment-flaskdeveloper-businesswebsite-activity-7231896232263065600-0k5A?utm_source=share&utm_medium=member_desktop&rcm=ACoAAESxBI8BxvPwjujJf4hh5F_riANWHXN8Vt8' },
       { title: 'SIEM System', link: 'https://www.linkedin.com/posts/abdullahdigital_webdevelopment-techinnovation-projectshowcase-activity-7232974479205826560-lZEZ?utm_source=share&utm_medium=member_desktop&rcm=ACoAAESxBI8BxvPwjujJf4hh5F_riANWHXN8Vt8' },
@@ -39,7 +41,7 @@ export const industriesData: Industry[] = [
     name: 'Healthcare',
     description: 'Building reliable, scalable, and tailored web solutions for diverse healthcare needs.',
     projects: [
-      { title: 'Dentist Website', link: 'https://drive.google.com/file/d/10SRF4gzLqOkPdrzaCGOIHIDQ50529x-9/view?usp=sharing' },
+      { title: 'Dentist Website', link: 'https://drive.google.com/file/d/1bNDfD9i6xd60CFRePHl-Z8mF1pQkOcyr/view?usp=sharing' },
       { title: 'Blood Donation App', link: 'https://drive.google.com/file/d/1YE414TJXeFz-9Mnw9U8BaIHllY3gjr9w/view?usp=sharing' },
     ],
   },
@@ -111,6 +113,13 @@ export const industriesData: Industry[] = [
     description: 'Captivating digital spaces for endless fun and play.',
     projects: [
       { title: 'Gaming Platform', link: 'https://abdullahdigital.github.io/ali/' },
+    ],
+  },
+  {
+    name: 'Sales & Marketing',
+    description: 'Tools to boost sales, outreach, and client engagement.',
+    projects: [
+      { title: 'CRM For Linkedin', link: 'https://drive.google.com/file/d/1LHuXt0aDXiMNjCEp7q7i6LE-zBSMB_6r/view' },
     ],
   },
 ];

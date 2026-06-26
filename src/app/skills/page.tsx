@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaReact, FaNodeJs, FaPython, FaHtml5, FaCss3Alt, FaBootstrap, FaGitAlt, FaGithub, FaAws } from 'react-icons/fa';
-import { SiNextdotjs, SiDjango, SiTailwindcss, SiPostgresql, SiMongodb, SiExpress, SiFramer, SiTypescript, SiJquery, SiNginx, SiFlask, SiFastapi, SiLaravel, SiPhp, SiMysql, SiSqlite, SiElasticsearch, SiApache, SiDocker } from 'react-icons/si';
+import { SiNextdotjs, SiDjango, SiTailwindcss, SiPostgresql, SiMongodb, SiExpress, SiFramer, SiTypescript, SiJquery, SiNginx, SiFlask, SiFastapi, SiLaravel, SiPhp, SiMysql, SiSqlite, SiElasticsearch, SiApache, SiDocker, SiSolid, SiQwik, SiAngular, SiVuedotjs, SiAstro, SiRust } from 'react-icons/si';
 import { DiMsqlServer } from 'react-icons/di';
 import { TbApi } from "react-icons/tb";
 import { MdSecurity } from "react-icons/md";
@@ -21,6 +21,11 @@ const skillsData: Skill[] = [
   { name: 'Next.js', icon: SiNextdotjs, category: 'Frontend' },
   { name: 'Django', icon: SiDjango, category: 'Backend' },
   { name: 'React.js', icon: FaReact, category: 'Frontend' },
+  { name: 'Solid.js', icon: SiSolid, category: 'Frontend' },
+  { name: 'Qwik', icon: SiQwik, category: 'Frontend' },
+  { name: 'Angular', icon: SiAngular, category: 'Frontend' },
+  { name: 'Vue.js', icon: SiVuedotjs, category: 'Frontend' },
+  { name: 'Astro', icon: SiAstro, category: 'Frontend' },
   { name: 'Svelte', icon: SiFramer, category: 'Frontend' },
   { name: 'Nginx', icon: SiNginx, category: 'Cloud & Deployment' },
   { name: 'MongoDB', icon: SiMongodb, category: 'Database' },
@@ -41,6 +46,7 @@ const skillsData: Skill[] = [
   { name: 'Python', icon: FaPython, category: 'Language' },
   { name: 'JavaScript', icon: FaNodeJs, category: 'Language' },
   { name: 'TypeScript', icon: SiTypescript, category: 'Language' },
+  { name: 'Rust', icon: SiRust, category: 'Language' },
   { name: 'jQuery', icon: SiJquery, category: 'Frontend' },
   { name: 'HTML5', icon: FaHtml5, category: 'Frontend' },
   { name: 'CSS3', icon: FaCss3Alt, category: 'Animation' },
@@ -51,6 +57,8 @@ const skillsData: Skill[] = [
   { name: 'Back-End Development', icon: FaNodeJs, category: 'Backend' },
   { name: 'Full Stack Development', icon: FaPython, category: 'Full Stack' },
   { name: 'MERN Stack', icon: FaReact, category: 'Full Stack' },
+  { name: 'MEAN Stack', icon: SiAngular, category: 'Full Stack' },
+  { name: 'PERN Stack', icon: SiPostgresql, category: 'Full Stack' },
   { name: 'Django Stack', icon: SiDjango, category: 'Full Stack' },
   { name: 'LAMP Stack', icon: FaHtml5, category: 'Full Stack' },
   { name: 'Apache', icon: SiApache, category: 'Cloud & Deployment' },

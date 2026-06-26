@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { useState } from 'react';
 import Link from 'next/link'; // Import Link
 import { FaReact, FaNodeJs, FaPython, FaHtml5, FaCss3Alt, FaBootstrap, FaGitAlt, FaGithub, FaAws } from 'react-icons/fa';
-import { SiNextdotjs, SiDjango, SiTailwindcss, SiPostgresql, SiMongodb, SiExpress, SiFramer, SiTypescript, SiJquery, SiNginx, SiFlask, SiFastapi, SiLaravel, SiPhp, SiMysql, SiSqlite, SiElasticsearch, SiApache, SiDocker } from 'react-icons/si';
+import { SiNextdotjs, SiDjango, SiTailwindcss, SiPostgresql, SiMongodb, SiExpress, SiFramer, SiTypescript, SiJquery, SiNginx, SiFlask, SiFastapi, SiLaravel, SiPhp, SiMysql, SiSqlite, SiElasticsearch, SiApache, SiDocker, SiSolid, SiQwik, SiAngular, SiVuedotjs, SiAstro, SiRust } from 'react-icons/si';
 import { DiMsqlServer } from 'react-icons/di';
 import { TbApi } from "react-icons/tb";
 import { MdSecurity } from "react-icons/md";
@@ -20,9 +20,15 @@ const skillsData: SkillProps[] = [
   { name: 'Next.js', Icon: SiNextdotjs, category: 'Frontend' },
   { name: 'Django', Icon: SiDjango, category: 'Backend' },
   { name: 'React.js', Icon: FaReact, category: 'Frontend' },
+  { name: 'Solid.js', Icon: SiSolid, category: 'Frontend' },
+  { name: 'Qwik', Icon: SiQwik, category: 'Frontend' },
+  { name: 'Angular', Icon: SiAngular, category: 'Frontend' },
+  { name: 'Vue.js', Icon: SiVuedotjs, category: 'Frontend' },
+  { name: 'Astro', Icon: SiAstro, category: 'Frontend' },
   { name: 'Svelte', Icon: SiFramer, category: 'Frontend' },
   { name: 'Nginx', Icon: SiNginx, category: 'Cloud & Deployment' },
-  { name: 'MERN Stack', Icon: FaReact, category: 'Full Stack' }, // Replaced MongoDB with MERN Stack
+  { name: 'MERN Stack', Icon: FaReact, category: 'Full Stack' },
+  { name: 'MEAN Stack', Icon: SiAngular, category: 'Full Stack' },
   { name: 'PERN Stack', Icon: SiPostgresql, category: 'Full Stack' },
   { name: 'Node.js', Icon: FaNodeJs, category: 'Backend' },
   { name: 'Express.js', Icon: SiExpress, category: 'Backend' },
@@ -42,6 +48,7 @@ const skillsData: SkillProps[] = [
   { name: 'Python', Icon: FaPython, category: 'Language' },
   { name: 'JavaScript', Icon: FaNodeJs, category: 'Language' },
   { name: 'TypeScript', Icon: SiTypescript, category: 'Language' },
+  { name: 'Rust', Icon: SiRust, category: 'Language' },
   { name: 'jQuery', Icon: SiJquery, category: 'Frontend' },
   { name: 'HTML5', Icon: FaHtml5, category: 'Frontend' },
   { name: 'CSS3', Icon: FaCss3Alt, category: 'Animation' },

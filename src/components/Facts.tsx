@@ -64,13 +64,13 @@ const Facts = () => {
     },
     {
       title: 'Projects Completed',
-      value: 45,
+      value: 48,
       suffix: '+',
       description: 'Transforming ideas into stunning, functional web experiences.',
     },
     {
       title: 'Industries Served',
-      value: 12,
+      value: 13,
       suffix: '+',
       description: 'Driving innovation across diverse sectors with tailored web solutions.',
     },
