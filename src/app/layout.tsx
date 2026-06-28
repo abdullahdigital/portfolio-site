@@ -6,8 +6,80 @@ import NextNProgress from 'nextjs-toploader';
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Abdullah | Full-Stack Developer & UI/UX Enthusiast | Secure & Scalable Web Apps",
-  description: "Abdullah is a Full-Stack Developer and UI/UX Enthusiast specializing in building secure and scalable web applications. Explore his portfolio of projects and skills.",
+  metadataBase: new URL("https://abdullahdigital.vercel.app"),
+
+  title: {
+    default: "AbdullahDigital | AI, Cybersecurity & Full-Stack Developer",
+    template: "%s | AbdullahDigital",
+  },
+
+  description:
+    "Portfolio of Muhammad Abdullah showcasing AI, cybersecurity, and full-stack web development projects.",
+
+  keywords: [
+    "Muhammad Abdullah",
+    "AbdullahDigital",
+    "Full-Stack Developer",
+    "Cybersecurity",
+    "Next.js",
+    "React",
+    "Django",
+    "Python",
+    "SOC Analyst",
+    "Penetration Testing",
+    "AI",
+    "Portfolio",
+  ],
+
+  category: "Technology",
+
+  applicationName: "AbdullahDigital",
+
+  authors: [
+    {
+      name: "Muhammad Abdullah",
+      url: "https://abdullahdigital.vercel.app",
+    },
+  ],
+
+ openGraph: {
+    type: "website",
+    siteName: "AbdullahDigital",
+    title: "AbdullahDigital | AI, Cybersecurity & Full-Stack Developer",
+    description:
+      "Portfolio of Muhammad Abdullah showcasing AI, cybersecurity, and full-stack web development projects.",
+    url: "https://abdullahdigital.vercel.app",
+    images: [
+      {
+        url: "/img/my pic.jpeg",
+        width: 1200,
+        height: 630,
+        alt: "Muhammad Abdullah - Full-Stack Developer & Cybersecurity",
+      },
+    ],
+  },
+
+  
+
+  creator: "Muhammad Abdullah",
+
+  publisher: "Muhammad Abdullah",
+
+  alternates: {
+    canonical: "/",
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
 };
 
 export default function RootLayout({
