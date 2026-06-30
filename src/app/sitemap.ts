@@ -10,6 +10,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/skills',
     '/industries',
     '/referral',
+    '/faq',
+    '/about',
   ];
 
   // Generate sitemap entries

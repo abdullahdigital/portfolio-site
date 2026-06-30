@@ -99,9 +99,10 @@ const Hero = () => {
             <Image
               src="/img/my pic.jpeg" // Updated to use the correct image path
               alt="Abdullah - Full-Stack Developer, UI/UX Enthusiast, and Problem Solver"
-              layout="fill"
+              fill
               objectFit="cover"
               className="rounded-full"
+              priority
             />
           </motion.div>
         </motion.div>

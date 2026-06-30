@@ -38,7 +38,7 @@ const Footer = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="text-emerald-400 hover:text-emerald-300 transition-colors duration-300 text-3xl"
-              whileHover={{ scale: 1.2, color: '#34D399' }} // Emerald-400 color
+              whileHover={{ scale: 1.2, color: '#34D399' }}
               whileTap={{ scale: 0.9 }}
               aria-label={link.label}
             >
@@ -54,10 +54,15 @@ const Footer = () => {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.5, delay: 0.4 }}
         >
-          <ul className="flex justify-center space-x-4 text-md">
+          <ul className="flex flex-wrap justify-center gap-4 text-md">
             <li>
               <Link href={pathname === '/' ? '#hero' : '/#hero'} className="text-white hover:text-gray-300 transition-colors duration-300">
                 Home
+              </Link>
+            </li>
+            <li>
+              <Link href="/about" className="text-white hover:text-gray-300 transition-colors duration-300">
+                About
               </Link>
             </li>
             <li>
@@ -68,6 +73,11 @@ const Footer = () => {
             <li>
               <Link href={pathname === '/' ? '#projects' : '/#projects'} className="text-white hover:text-gray-300 transition-colors duration-300">
                 Projects
+              </Link>
+            </li>
+            <li>
+              <Link href="/faq" className="text-white hover:text-gray-300 transition-colors duration-300">
+                FAQ
               </Link>
             </li>
             <li>
