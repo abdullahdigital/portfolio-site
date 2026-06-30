@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import NextNProgress from 'nextjs-toploader';
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -197,6 +198,9 @@ export default function RootLayout({
           shadow="0 0 10px #29D, 0 0 5px #29D"
         />
         {children}
+
+          <GoogleAnalytics gaId="G-NGNQMKS0BH" />
+
         {/* Original Portfolio of AbdullahDigital | https://abdullahdigital.vercel.app */}
       </body>
     </html>
