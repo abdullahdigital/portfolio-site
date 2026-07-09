@@ -37,12 +37,12 @@ const Footer = () => {
               href={link.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-emerald-400 hover:text-emerald-300 transition-colors duration-300 text-3xl"
+              className="text-emerald-400 hover:text-emerald-300 transition-colors duration-300 text-3xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900 rounded-full p-2"
               whileHover={{ scale: 1.2, color: '#34D399' }}
               whileTap={{ scale: 0.9 }}
-              aria-label={link.label}
+              aria-label={`Visit ${link.label} profile of Abdullah`}
             >
-              <link.icon />
+              <link.icon aria-hidden="true" />
             </motion.a>
           ))}
         </motion.div>
@@ -53,35 +53,36 @@ const Footer = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.5, delay: 0.4 }}
+          aria-label="Footer navigation"
         >
           <ul className="flex flex-wrap justify-center gap-4 text-md">
             <li>
-              <Link href={pathname === '/' ? '#hero' : '/#hero'} className="text-white hover:text-gray-300 transition-colors duration-300">
+              <Link href={pathname === '/' ? '#hero' : '/#hero'} className="text-white hover:text-gray-300 transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900 rounded px-2 py-1">
                 Home
               </Link>
             </li>
             <li>
-              <Link href="/about" className="text-white hover:text-gray-300 transition-colors duration-300">
+              <Link href="/about" className="text-white hover:text-gray-300 transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900 rounded px-2 py-1">
                 About
               </Link>
             </li>
             <li>
-              <Link href={pathname === '/' ? '#skills' : '/#skills'} className="text-white hover:text-gray-300 transition-colors duration-300">
+              <Link href={pathname === '/' ? '#skills' : '/#skills'} className="text-white hover:text-gray-300 transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900 rounded px-2 py-1">
                 Skills
               </Link>
             </li>
             <li>
-              <Link href={pathname === '/' ? '#projects' : '/#projects'} className="text-white hover:text-gray-300 transition-colors duration-300">
+              <Link href={pathname === '/' ? '#projects' : '/#projects'} className="text-white hover:text-gray-300 transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900 rounded px-2 py-1">
                 Projects
               </Link>
             </li>
             <li>
-              <Link href="/faq" className="text-white hover:text-gray-300 transition-colors duration-300">
+              <Link href="/faq" className="text-white hover:text-gray-300 transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900 rounded px-2 py-1">
                 FAQ
               </Link>
             </li>
             <li>
-              <Link href={pathname === '/' ? '#contact' : '/#contact'} className="text-white hover:text-gray-300 transition-colors duration-300">
+              <Link href={pathname === '/' ? '#contact' : '/#contact'} className="text-white hover:text-gray-300 transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900 rounded px-2 py-1">
                 Contact
               </Link>
             </li>

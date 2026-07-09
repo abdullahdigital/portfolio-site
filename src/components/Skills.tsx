@@ -100,6 +100,8 @@ const SkillCard: React.FC<SkillProps> = ({ name, Icon, category }) => {
         zIndex: 1,
         overflow: 'hidden',
       }}
+      role="article"
+      aria-label={`${name}, a ${category} skill`}
     >
       {hovered && (
         <motion.div
@@ -108,10 +110,11 @@ const SkillCard: React.FC<SkillProps> = ({ name, Icon, category }) => {
           animate={{ background: 'radial-gradient(circle at center, rgba(16, 185, 129, 0.2) 50%, rgba(16, 185, 129, 0) 100%)' }}
           transition={{ duration: 0.5, ease: 'easeOut' }}
           style={{ zIndex: -1 }}
+          aria-hidden="true"
         />
       )}
       <div className="relative z-10 flex flex-col items-center">
-        <div className="text-4xl text-emerald-400 mb-4">
+        <div className="text-4xl text-emerald-400 mb-4" aria-hidden="true">
           {<Icon />}
         </div>
         <h3 className="text-xl font-semibold text-white mb-2">{name}</h3>
@@ -155,16 +158,21 @@ const Skills = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.5, delay: 0.2 }}
+          role="tablist"
+          aria-label="Skill category filters"
         >
           <motion.button
             onClick={() => setDisplayMode('top6')}
-            className={`px-6 py-2 rounded-full text-lg font-medium transition-all duration-300
+            className={`px-6 py-2 rounded-full text-lg font-medium transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900
               ${displayMode === 'top6'
                 ? 'bg-emerald-600 text-white shadow-lg'
                 : 'bg-gray-700 text-gray-200 hover:bg-gray-600 hover:text-white'
               }`}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            role="tab"
+            aria-selected={displayMode === 'top6'}
+            aria-controls="skills-grid"
           >
             Top 6 Skills
           </motion.button>
@@ -172,20 +180,23 @@ const Skills = () => {
             <motion.button
               key={cat}
               onClick={() => setDisplayMode(cat)}
-              className={`px-6 py-2 mx-2 rounded-full text-lg font-medium transition-all duration-300
+              className={`px-6 py-2 mx-2 rounded-full text-lg font-medium transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900
                 ${displayMode === cat
                   ? 'bg-emerald-500 text-white shadow-lg'
                   : 'bg-gray-700 text-gray-300 hover:bg-gray-600 hover:text-white'
                 }`}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              role="tab"
+              aria-selected={displayMode === cat}
+              aria-controls="skills-grid"
             >
               {cat}
             </motion.button>
           ))}
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" id="skills-grid" role="tabpanel">
           {skillsToDisplay.map((skill, index) => (
             <SkillCard key={index} name={skill.name} Icon={skill.Icon} category={skill.category} />
           ))}
@@ -199,7 +210,7 @@ const Skills = () => {
         >
           <Link
             href="/skills"
-            className="px-8 py-3 rounded-full text-lg font-medium bg-emerald-600 text-white shadow-lg hover:bg-emerald-700 transition-colors duration-300"
+            className="px-8 py-3 rounded-full text-lg font-medium bg-emerald-600 text-white shadow-lg hover:bg-emerald-700 transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900"
           >
             View All Skills
           </Link>

@@ -14,8 +14,8 @@ const Hero = () => {
 
   return (
     <section id="hero" className="relative h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-950 via-violet-900 to-emerald-900 pt-16">
-      {/* Background with subtle animated shapes */}
-      <div className="absolute inset-0 z-0 opacity-20">
+      {/* Background with subtle animated shapes (decorative) */}
+      <div className="absolute inset-0 z-0 opacity-20" aria-hidden="true">
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -62,6 +62,7 @@ const Hero = () => {
               speed={50}
               repeat={Infinity}
               className="text-emerald-400"
+              aria-live="polite"
             />
           </h1>
        <p className="mt-3 text-base text-gray-300">
@@ -71,11 +72,12 @@ const Hero = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="mt-6 mx-auto px-6 py-2 bg-emerald-600 text-white text-base font-semibold rounded-lg shadow-lg hover:bg-emerald-700 transition duration-300"
+              className="mt-6 mx-auto px-6 py-2 bg-emerald-600 text-white text-base font-semibold rounded-lg shadow-lg hover:bg-emerald-700 transition duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
               variants={buttonVariants}
               initial="hidden"
               animate="visible"
               onClick={() => router.push('#contact')}
+              aria-label="Navigate to contact section"
             >
               Hire Me
             </motion.button>
@@ -97,11 +99,11 @@ const Hero = () => {
             className="relative w-64 h-64 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-emerald-500 shadow-lg"
           >
             <Image
-              src="/img/my pic.jpeg" // Updated to use the correct image path
-              alt="Abdullah - Full-Stack Developer, UI/UX Enthusiast, and Problem Solver"
+              src="/img/my pic.jpeg"
+              alt="Portrait of Abdullah smiling"
               fill
-              objectFit="cover"
-              className="rounded-full"
+              className="rounded-full object-cover"
+              sizes="(max-width: 768px) 256px, 384px"
               priority
             />
           </motion.div>

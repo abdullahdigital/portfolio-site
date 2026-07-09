@@ -31,8 +31,9 @@ const AboutPage = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
             className="bg-gray-800 rounded-lg p-8 border border-gray-700 shadow-lg"
+            aria-labelledby="who-am-i-heading"
           >
-            <h2 className="text-2xl font-bold text-white mb-6">Who Am I?</h2>
+            <h2 id="who-am-i-heading" className="text-2xl font-bold text-white mb-6">Who Am I?</h2>
             <p className="text-gray-300 mb-4">
               Hi, I&apos;m Abdullah! I&apos;m a full-stack developer and cybersecurity professional with a passion for building secure, scalable, and intelligent digital solutions. My journey in tech started with curiosity and has evolved into a deep expertise spanning web development, penetration testing, and artificial intelligence.
             </p>
@@ -48,9 +49,11 @@ const AboutPage = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
               className="bg-gray-800 rounded-lg p-6 border border-gray-700 text-center"
+              role="article"
+              aria-labelledby="fullstack-dev-heading"
             >
-              <FaLaptopCode className="text-4xl text-emerald-500 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold mb-2">Full-Stack Dev</h3>
+              <FaLaptopCode className="text-4xl text-emerald-500 mx-auto mb-4" aria-hidden="true" />
+              <h3 id="fullstack-dev-heading" className="text-xl font-semibold mb-2">Full-Stack Dev</h3>
               <p className="text-gray-400">
                 Building modern web apps with Next.js, Django, React, and more!
               </p>
@@ -62,9 +65,11 @@ const AboutPage = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
               className="bg-gray-800 rounded-lg p-6 border border-gray-700 text-center"
+              role="article"
+              aria-labelledby="cybersecurity-heading"
             >
-              <FaShieldAlt className="text-4xl text-emerald-500 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold mb-2">Cybersecurity</h3>
+              <FaShieldAlt className="text-4xl text-emerald-500 mx-auto mb-4" aria-hidden="true" />
+              <h3 id="cybersecurity-heading" className="text-xl font-semibold mb-2">Cybersecurity</h3>
               <p className="text-gray-400">
                 Penetration testing, threat analysis, and secure software development!
               </p>
@@ -76,9 +81,11 @@ const AboutPage = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
               className="bg-gray-800 rounded-lg p-6 border border-gray-700 text-center"
+              role="article"
+              aria-labelledby="ai-automation-heading"
             >
-              <FaBrain className="text-4xl text-emerald-500 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold mb-2">AI Agents & Automation</h3>
+              <FaBrain className="text-4xl text-emerald-500 mx-auto mb-4" aria-hidden="true" />
+              <h3 id="ai-automation-heading" className="text-xl font-semibold mb-2">AI Agents & Automation</h3>
               <p className="text-gray-400">
                 Building intelligent systems and automating repetitive tasks!
               </p>

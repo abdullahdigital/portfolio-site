@@ -123,7 +123,7 @@ const FAQPage = () => {
           </p>
         </motion.div>
 
-        <div className="max-w-3xl mx-auto space-y-6">
+        <div className="max-w-3xl mx-auto space-y-6" role="list">
           {faqData.map((faq, index) => (
             <motion.div
               key={index}
@@ -132,11 +132,14 @@ const FAQPage = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.05 }}
               className="bg-gray-800 rounded-lg p-6 border border-gray-700 shadow-lg"
+              role="listitem"
             >
               <button
                 onClick={() => toggleFAQ(index)}
-                className="w-full flex justify-between items-center text-left"
+                className="w-full flex justify-between items-center text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-800 rounded-lg"
                 aria-expanded={activeIndex === index}
+                aria-controls={`faq-answer-${index}`}
+                id={`faq-question-${index}`}
               >
                 <span className="text-xl font-semibold text-white">
                   {faq.question}
@@ -144,6 +147,7 @@ const FAQPage = () => {
                 <motion.div
                   animate={{ rotate: activeIndex === index ? 180 : 0 }}
                   transition={{ duration: 0.3 }}
+                  aria-hidden="true"
                 >
                   {activeIndex === index ? <FaChevronUp /> : <FaChevronDown />}
                 </motion.div>
@@ -152,11 +156,14 @@ const FAQPage = () => {
               <AnimatePresence>
                 {activeIndex === index && (
                   <motion.div
+                    id={`faq-answer-${index}`}
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: 'auto', opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
                     transition={{ duration: 0.3 }}
                     className="mt-4 overflow-hidden"
+                    role="region"
+                    aria-labelledby={`faq-question-${index}`}
                   >
                     <p className="text-gray-300 leading-relaxed">
                       {faq.answer}

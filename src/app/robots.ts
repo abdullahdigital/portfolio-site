@@ -9,5 +9,6 @@ export default function robots(): MetadataRoute.Robots {
       },
     ],
     sitemap: 'https://abdullahdigital.vercel.app/sitemap.xml',
+    host: 'https://abdullahdigital.vercel.app',
   };
 }

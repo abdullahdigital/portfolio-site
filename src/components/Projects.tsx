@@ -20,12 +20,10 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, im
         <div className="relative w-full h-48 overflow-hidden">
           <Image
             src={image}
-            alt={`${
-            title
-          } - Portfolio Project`}
-            layout="fill"
-            objectFit="cover"
-            className="rounded-t-lg"
+            alt={`${title} - Portfolio Project`}
+            fill
+            className="rounded-t-lg object-cover"
+            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
           />
         </div>
         <div className="p-6 flex flex-col flex-grow">
