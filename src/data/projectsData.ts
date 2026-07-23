@@ -66,7 +66,7 @@ export const projectsData: ProjectCardProps[] = [
     title: 'Dentist Website',
     description: 'Clean, professional dental clinic site with service showcase and booking.',
     image: '/projects/4dentist.png',
-    link: 'https://drive.google.com/file/d/1bNDfD9i6xd60CFRePHl-Z8mF1pQkOcyr/view?usp=sharing',
+    link: 'https://drive.google.com/file/d/10SRF4gzLqOkPdrzaCGOIHIDQ50529x-9/view',
     github: '#',
     category: 'Healthcare',
     isFeatured: true,
