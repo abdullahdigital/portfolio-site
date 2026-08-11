@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { TypeAnimation } from 'react-type-animation';
 import { useRouter } from 'next/navigation';
+import { FaArrowRight } from 'react-icons/fa';
 
 const Hero = () => {
   const router = useRouter(); // Initialize useRouter
@@ -72,14 +73,24 @@ const Hero = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="mt-6 mx-auto px-6 py-2 bg-emerald-600 text-white text-base font-semibold rounded-lg shadow-lg hover:bg-emerald-700 transition duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
+              className="group mt-6 mx-auto inline-flex items-center gap-2 px-6 py-2 bg-emerald-600 text-white text-base font-semibold rounded-lg shadow-lg hover:bg-emerald-700 transition duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
               variants={buttonVariants}
               initial="hidden"
               animate="visible"
-              onClick={() => router.push('#contact')}
-              aria-label="Navigate to contact section"
+              onClick={() => {
+                if (window.location.pathname === '/') {
+                  document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                } else {
+                  router.push('/#contact');
+                }
+              }}
+              aria-label="Navigate to contact form"
             >
               Hire Me
+              <FaArrowRight 
+                aria-hidden="true"
+                className="transition-all duration-300 translate-x-0 opacity-70 group-hover:translate-x-1 group-hover:opacity-100"
+              />
             </motion.button>
           </motion.div>
 

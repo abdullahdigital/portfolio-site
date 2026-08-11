@@ -12,6 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/referral',
     '/faq',
     '/about',
+    '/services',
   ];
 
   // Generate sitemap entries

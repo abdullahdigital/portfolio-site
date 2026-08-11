@@ -84,17 +84,13 @@ const skillsData: SkillProps[] = [
 ];
 
 const SkillCard: React.FC<SkillProps> = ({ name, Icon, category }) => {
-  const [hovered, setHovered] = useState(false);
-
   return (
     <motion.div
-      className={`relative bg-gray-800 p-6 rounded-lg shadow-lg border border-gray-700 overflow-hidden
-        ${hovered ? 'hover-effect' : ''}
+      className={`group relative bg-gray-800 p-6 rounded-lg shadow-lg border border-gray-700 overflow-hidden transition-all duration-300
+        hover:scale-105 hover:border-emerald-500
       `}
-      onHoverStart={() => setHovered(true)}
-      onHoverEnd={() => setHovered(false)}
-      whileHover={{ scale: 1.05, borderColor: '#10B981' }}
-      transition={{ duration: 0.3 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.3 }}
       style={{
         position: 'relative',
         zIndex: 1,
@@ -103,16 +99,14 @@ const SkillCard: React.FC<SkillProps> = ({ name, Icon, category }) => {
       role="article"
       aria-label={`${name}, a ${category} skill`}
     >
-      {hovered && (
-        <motion.div
-          className="absolute inset-0 rounded-lg"
-          initial={{ background: 'radial-gradient(circle at center, rgba(16, 185, 129, 0.2) 0%, rgba(16, 185, 129, 0) 0%)' }}
-          animate={{ background: 'radial-gradient(circle at center, rgba(16, 185, 129, 0.2) 50%, rgba(16, 185, 129, 0) 100%)' }}
-          transition={{ duration: 0.5, ease: 'easeOut' }}
-          style={{ zIndex: -1 }}
-          aria-hidden="true"
-        />
-      )}
+      <div
+        className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out pointer-events-none"
+        style={{
+          background: 'radial-gradient(circle at center, rgba(16, 185, 129, 0.2) 50%, rgba(16, 185, 129, 0) 100%)',
+          zIndex: -1,
+        }}
+        aria-hidden="true"
+      />
       <div className="relative z-10 flex flex-col items-center">
         <div className="text-4xl text-emerald-400 mb-4" aria-hidden="true">
           {<Icon />}

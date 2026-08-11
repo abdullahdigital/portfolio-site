@@ -22,50 +22,24 @@ const Navbar = () => {
   };
 
   const navLinks: NavLink[] = useMemo(() => [
-    { name: 'Home', href: '#hero' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'Industries', href: '#industries' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Certificates', href: '#certificates' },
+    { name: 'Home', href: '/' },
+    { name: 'Projects', href: '/projects' },
+    { name: 'Skills', href: '/skills' },
+    { name: 'Industries', href: '/industries' },
     { name: 'Referral', href: '/referral' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'FAQ', href: '/faq' },
+    { name: 'About', href: '/about' },
   ], []);
-
-  const [activeSection, setActiveSection] = useState<string>('hero');
 
   useEffect(() => {
     const handleScroll = () => {
-      // if (pathname !== '/'') return; // Only track sections on the homepage
-
-      const sections = navLinks.filter((link: NavLink) => link.href.startsWith('#'))
-        .map((link: NavLink) => document.getElementById(link.href.substring(1)))
-        .filter((section: HTMLElement | null): section is HTMLElement => section !== null) as HTMLElement[];
-
-      const scrollY = window.scrollY;
-
-      let currentActiveSection = 'hero'; // Default to hero
-      for (let i = 0; i < sections.length; i++) {
-        const section: HTMLElement = sections[i];
-        if (section.offsetTop <= scrollY + 100) {
-          currentActiveSection = section.id;
-        } else {
-          break; // We've passed the active section
-        }
-      }
-      setActiveSection(currentActiveSection);
-
-      if (window.scrollY > 0) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(window.scrollY > 0);
     };
 
     window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [pathname, navLinks]); // Re-run effect if pathname changes
+    handleScroll();
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <>
@@ -98,13 +72,13 @@ const Navbar = () => {
                 role="none"
               >
                 <Link
-                  href={link.href.startsWith('#') ? (pathname === '/' ? link.href : '/' + link.href) : link.href}
-                  className={`relative text-lg transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900 rounded px-2 py-1 ${pathname === '/' && activeSection === link.href.substring(1) || pathname === link.href ? 'text-emerald-400' : 'text-white hover:text-emerald-400'}`}
-                  aria-current={pathname === '/' && activeSection === link.href.substring(1) || pathname === link.href ? 'page' : undefined}
+                  href={link.href}
+                  className={`relative text-lg transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900 rounded px-2 py-1 ${pathname === link.href ? 'text-emerald-400' : 'text-white hover:text-emerald-400'}`}
+                  aria-current={pathname === link.href ? 'page' : undefined}
                   role="menuitem"
                 >
                   {link.name}
-                  <span className={`absolute left-0 bottom-0 w-full h-0.5 bg-emerald-400 transition-transform duration-300 ease-out ${pathname === '/' && activeSection === link.href.substring(1) || pathname === link.href ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}></span>
+                  <span className={`absolute left-0 bottom-0 w-full h-0.5 bg-emerald-400 transition-transform duration-300 ease-out ${pathname === link.href ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}></span>
                 </Link>
               </motion.div>
             ))}
@@ -147,12 +121,11 @@ const Navbar = () => {
                     role="none"
                   >
                     <Link
-                      href={pathname === '/' ? link.href : (link.href.startsWith('#') ? '/' + link.href : link.href)}
-                      className={`block text-lg transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-800 rounded px-4 py-2 ${pathname === '/' && activeSection === link.href.substring(1) || pathname === link.href ? 'text-emerald-400' : 'text-white hover:text-emerald-400'}`}
-                      aria-current={pathname === '/' && activeSection === link.href.substring(1) || pathname === link.href ? 'page' : undefined}
+                      href={link.href}
+                      className={`block text-lg transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-800 rounded px-4 py-2 ${pathname === link.href ? 'text-emerald-400' : 'text-white hover:text-emerald-400'}`}
+                      aria-current={pathname === link.href ? 'page' : undefined}
                       role="menuitem"
                       onClick={() => {
-                        setActiveSection(link.href.substring(1));
                         setIsOpen(false);
                       }}
                       onKeyDown={(e) => {

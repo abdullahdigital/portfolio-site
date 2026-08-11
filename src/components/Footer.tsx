@@ -57,8 +57,28 @@ const Footer = () => {
         >
           <ul className="flex flex-wrap justify-center gap-4 text-md">
             <li>
-              <Link href={pathname === '/' ? '#hero' : '/#hero'} className="text-white hover:text-gray-300 transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900 rounded px-2 py-1">
+              <Link href="/" className="text-white hover:text-gray-300 transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900 rounded px-2 py-1">
                 Home
+              </Link>
+            </li>
+            <li>
+              <Link href="/services" className="text-white hover:text-gray-300 transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900 rounded px-2 py-1">
+                Services
+              </Link>
+            </li>
+            <li>
+              <Link href="/projects" className="text-white hover:text-gray-300 transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900 rounded px-2 py-1">
+                Projects
+              </Link>
+            </li>
+            <li>
+              <Link href="/skills" className="text-white hover:text-gray-300 transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900 rounded px-2 py-1">
+                Skills
+              </Link>
+            </li>
+            <li>
+              <Link href="/industries" className="text-white hover:text-gray-300 transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900 rounded px-2 py-1">
+                Industries
               </Link>
             </li>
             <li>
@@ -67,23 +87,13 @@ const Footer = () => {
               </Link>
             </li>
             <li>
-              <Link href={pathname === '/' ? '#skills' : '/#skills'} className="text-white hover:text-gray-300 transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900 rounded px-2 py-1">
-                Skills
-              </Link>
-            </li>
-            <li>
-              <Link href={pathname === '/' ? '#projects' : '/#projects'} className="text-white hover:text-gray-300 transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900 rounded px-2 py-1">
-                Projects
-              </Link>
-            </li>
-            <li>
               <Link href="/faq" className="text-white hover:text-gray-300 transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900 rounded px-2 py-1">
                 FAQ
               </Link>
             </li>
             <li>
-              <Link href={pathname === '/' ? '#contact' : '/#contact'} className="text-white hover:text-gray-300 transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900 rounded px-2 py-1">
-                Contact
+              <Link href="/referral" className="text-white hover:text-gray-300 transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900 rounded px-2 py-1">
+                Referral
               </Link>
             </li>
           </ul>
