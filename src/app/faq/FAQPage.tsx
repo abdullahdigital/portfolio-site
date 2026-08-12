@@ -1,6 +1,6 @@
 'use client';
 
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useState, useMemo } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -180,24 +180,19 @@ const FAQPage = () => {
                 </motion.div>
               </button>
 
-              <AnimatePresence>
-                {activeIndex === index && (
-                  <motion.div
-                    id={`faq-answer-${index}`}
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: 'auto', opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="mt-4 overflow-hidden"
-                    role="region"
-                    aria-labelledby={`faq-question-${index}`}
-                  >
-                    <p className="text-gray-300 leading-relaxed">
-                      {faq.answer}
-                    </p>
-                  </motion.div>
-                )}
-              </AnimatePresence>
+              <motion.div
+                id={`faq-answer-${index}`}
+                initial={false}
+                animate={activeIndex === index ? { height: 'auto', opacity: 1 } : { height: 0, opacity: 0 }}
+                transition={{ duration: 0.3 }}
+                className="mt-4 overflow-hidden"
+                role="region"
+                aria-labelledby={`faq-question-${index}`}
+              >
+                <p className="text-gray-300 leading-relaxed">
+                  {faq.answer}
+                </p>
+              </motion.div>
             </motion.div>
           ))}
         </div>

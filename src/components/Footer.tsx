@@ -37,8 +37,8 @@ const Footer = () => {
               href={link.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-emerald-400 hover:text-emerald-300 transition-colors duration-300 text-3xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900 rounded-full p-2"
-              whileHover={{ scale: 1.2, color: '#34D399' }}
+              className="text-emerald-400 hover:text-[#34D399] transition-colors duration-300 text-3xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900 rounded-full p-2"
+              whileHover={{ scale: 1.2 }}
               whileTap={{ scale: 0.9 }}
               aria-label={`Visit ${link.label} profile of Abdullah`}
             >

@@ -67,7 +67,7 @@ const Navbar = () => {
             {navLinks.map((link: NavLink) => (
               <motion.div
                 key={link.name}
-                whileHover={{ scale: 1.05, color: "#34D399" }}
+                whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 role="none"
               >

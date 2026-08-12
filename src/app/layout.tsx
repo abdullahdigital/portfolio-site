@@ -3,8 +3,9 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import NextNProgress from 'nextjs-toploader';
 import { GoogleAnalytics } from "@next/third-parties/google";
+import AIChatbot from "@/components/AIChatbot";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"], preload: false });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://abdullahdigital.vercel.app"),
@@ -266,6 +267,7 @@ export default function RootLayout({
           shadow="0 0 10px #29D, 0 0 5px #29D"
         />
         {children}
+        <AIChatbot />
 
           <GoogleAnalytics gaId="G-NGNQMKS0BH" />
 
