@@ -79,6 +79,11 @@ const nextConfig: NextConfig = {
           },
 
           {
+            key: "Vary",
+            value: "Accept, Accept-Encoding",
+          },
+
+          {
             key: "Cross-Origin-Opener-Policy",
             value: "same-origin",
           },

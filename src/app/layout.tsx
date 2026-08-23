@@ -223,17 +223,54 @@ export default function RootLayout({
                   }
                 },
                 {
+                  "@type": "Organization",
+                  "@id": "https://abdullahdigital.vercel.app/#organization",
+                  "name": "AbdullahDigital",
+                  "url": "https://abdullahdigital.vercel.app",
+                  "logo": "https://abdullahdigital.vercel.app/img/logo.png",
+                  "email": "abdullahwebhero@gmail.com",
+                  "telephone": "+92-300-0000000",
+                  "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "Rawalpindi",
+                    "addressLocality": "Rawalpindi",
+                    "addressRegion": "Punjab",
+                    "postalCode": "46000",
+                    "addressCountry": "PK"
+                  },
+                  "contactPoint": {
+                    "@type": "ContactPoint",
+                    "contactType": "customer service",
+                    "email": "abdullahwebhero@gmail.com",
+                    "telephone": "+92-300-0000000",
+                    "areaServed": "PK",
+                    "availableLanguage": ["English", "Urdu"]
+                  },
+                  "sameAs": [
+                    "https://github.com/abdullahdigital",
+                    "https://linkedin.com/in/abdullahdigital"
+                  ]
+                },
+                {
                   "@type": "LocalBusiness",
                   "@id": "https://abdullahdigital.vercel.app/#localbusiness",
                   "name": "AbdullahDigital",
                   "description": "Full-Stack Development & Cybersecurity Services in Rawalpindi, Pakistan",
                   "url": "https://abdullahdigital.vercel.app",
-                  "telephone": "+92",
+                  "telephone": "+92-300-0000000",
+                  "email": "abdullahwebhero@gmail.com",
                   "address": {
                     "@type": "PostalAddress",
                     "addressLocality": "Rawalpindi",
                     "addressRegion": "Punjab",
                     "addressCountry": "PK"
+                  },
+                  "contactPoint": {
+                    "@type": "ContactPoint",
+                    "contactType": "customer service",
+                    "email": "abdullahwebhero@gmail.com",
+                    "telephone": "+92-300-0000000",
+                    "availableLanguage": ["English", "Urdu"]
                   },
                   "geo": {
                     "@type": "GeoCoordinates",
