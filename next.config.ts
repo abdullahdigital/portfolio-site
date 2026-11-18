@@ -28,7 +28,7 @@ const nextConfig: NextConfig = {
               "img-src 'self' data: blob: https:",
 
               // AJAX / fetch / analytics
-              "connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://*.googleapis.com https://vitals.vercel-insights.com",
+              "connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://*.googleapis.com https://vitals.vercel-insights.com https://formspree.io",
 
               // Frames
               "frame-ancestors 'none'",
